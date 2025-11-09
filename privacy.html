@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Ur Gay Now | Privacy Policy</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+  background: linear-gradient(135deg, #ff66b2, #00d0e0);
+  color: #fff;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
+.hero .btn { display: inline-block; padding: 18px 40px; border-radius: 12px; background: #ff66b2; color: #fff; font-weight: 600; margin: 10px 10px; text-decoration: none; transition: 0.3s; }
+.hero .btn:hover { background: #00d0e0; transform: scale(1.05); }
+
+/* Accordion */
+.accordion { max-width: 900px; margin: 40px auto; border-radius: 12px; overflow: hidden; }
+.accordion-item { margin-bottom: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.accordion-header { background: #222; padding: 15px 20px; cursor: pointer; font-weight: 600; transition: 0.3s; color: #fff; }
+.accordion-header:hover { background: #ff66b2; }
+.accordion-content { display: none; padding: 15px 20px; background: #111; color: #ccc; }
+
+/* Footer */
+footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; font-size: 0.9rem; }
+
+/* Responsive */
+@media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .hero p { font-size: 1.1rem; } }
+</style>
 </head>
 <body>
 
@@ -19,44 +47,63 @@
   </ul>
 </nav>
 
-<!-- Privacy Hero -->
+<!-- Hero Section -->
 <section class="hero">
-  <h2>Privacy Policy 🔒</h2>
-  <p>We respect your privacy! Here's how the Ur Gay Now Bot handles data in the server.</p>
+  <h1>Privacy Policy 🔒</h1>
+  <p>We value your privacy and want to make sure your data is safe while using Ur Gay Now Bot.</p>
 </section>
 
-<!-- Privacy Sections -->
-<section>
-  <div class="accordion">
-    <div class="accordion-header">What Data We Collect</div>
+<!-- Accordion Sections -->
+<section class="accordion">
+
+  <div class="accordion-item">
+    <div class="accordion-header">💁 What Data We Collect</div>
     <div class="accordion-content">
-      <p>We only collect Discord User IDs, Server IDs, and Role Names necessary for bot functionality.</p>
+      <p>We collect only basic data to make the bot function correctly in the Ur Gay Now server:</p>
+      <ul>
+        <li>Discord User IDs</li>
+        <li>Discord Server IDs</li>
+        <li>Role Names in the server</li>
+      </ul>
     </div>
   </div>
-  <div class="accordion">
-    <div class="accordion-header">How We Use Your Data</div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">🔐 How We Use Your Data</div>
     <div class="accordion-content">
-      <p>Your data is used solely to operate the bot, including moderation, welcomes, and fun commands.</p>
+      <p>Your data is used solely for the bot's functionality:</p>
+      <ul>
+        <li>To provide moderation and staff commands</li>
+        <li>To ensure the bot works properly in your server</li>
+      </ul>
     </div>
   </div>
-  <div class="accordion">
-    <div class="accordion-header">What We Don't Do</div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">❌ What We Don't Do</div>
     <div class="accordion-content">
-      <p>We do not share, sell, or use your information for marketing purposes.</p>
+      <ul>
+        <li>We do not share your data with third parties</li>
+        <li>We do not sell your information</li>
+        <li>We do not use your data for marketing</li>
+      </ul>
     </div>
   </div>
-  <div class="accordion">
-    <div class="accordion-header">Data Retention</div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">🛠 Data Retention</div>
     <div class="accordion-content">
-      <p>We only keep data as long as the bot is active in your server. When removed, your server's data is deleted.</p>
+      <p>We keep your data only as long as the bot is active in the server. Once removed, data associated with your server is deleted.</p>
     </div>
   </div>
-  <div class="accordion">
-    <div class="accordion-header">Your Rights</div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">🔒 Your Rights</div>
     <div class="accordion-content">
-      <p>You can request data removal by contacting staff. Keep in mind this may impact bot functionality.</p>
+      <p>You can request removal of any server-related data at any time. Doing so may affect bot functionality.</p>
     </div>
   </div>
+
 </section>
 
 <!-- Footer -->
@@ -65,19 +112,29 @@
   <p>&copy; 2025 Ur Gay Now</p>
 </footer>
 
-<!-- Accordion Script -->
 <script>
-  const headers = document.querySelectorAll('.accordion-header');
-  headers.forEach(header => {
-    header.addEventListener('click', () => {
-      const content = header.nextElementSibling;
-      const isOpen = content.style.display === 'block';
-      document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
-      content.style.display = isOpen ? 'none' : 'block';
-    });
+// Accordion toggle script
+const headers = document.querySelectorAll('.accordion-header');
+headers.forEach(header => {
+  header.addEventListener('click', () => {
+    const openItem = document.querySelector('.accordion-content.show');
+    if(openItem && openItem !== header.nextElementSibling) {
+      openItem.classList.remove('show');
+      openItem.style.display = 'none';
+    }
+    const content = header.nextElementSibling;
+    if(content.style.display === "block") {
+      content.style.display = "none";
+      content.classList.remove('show');
+    } else {
+      content.style.display = "block";
+      content.classList.add('show');
+    }
   });
+});
 </script>
 
 </body>
 </html>
+
 
