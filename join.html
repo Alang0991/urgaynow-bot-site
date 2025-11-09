@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Ur Gay Now | Join & Staff</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  /* Staff section styles */
-  .join-buttons {
-    text-align: center;
-    margin: 40px 0;
-  }
-  .join-buttons .btn {
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 12px;
-    background: #ff66b2;
-    color: #fff;
-    font-weight: 600;
-    margin: 10px 10px;
-    transition: 0.3s;
-  }
-  .join-buttons .btn:hover { background: #00d0e0; }
+/* Staff Cards */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+.staff-card {
+  background: #222;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.staff-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
+.staff-card h3 { color: #00d0e0; margin-bottom: 10px; font-size: 1.2rem; }
+.staff-card p { color: #ccc; font-size: 0.95rem; }
 
-  .staff-section {
-    max-width: 1000px;
-    margin: 60px auto;
-    text-align: center;
-  }
-  .staff-section h2 { color: #ff66b2; margin-bottom: 40px; }
-  .staff-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
-  }
-  .staff-card {
-    background: #222;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-  }
-  .staff-card:hover { transform: translateY(-5px); }
-  .staff-card h3 { color: #00d0e0; margin-bottom: 8px; font-size: 1.1rem; }
-  .staff-card p { font-size: 0.95rem; color: #ccc; }
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+  background: linear-gradient(135deg, #ff66b2, #00d0e0);
+  color: #fff;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
+.hero .btn { display: inline-block; padding: 18px 40px; border-radius: 12px; background: #ff66b2; color: #fff; font-weight: 600; margin: 10px 10px; text-decoration: none; transition: 0.3s; }
+.hero .btn:hover { background: #00d0e0; transform: scale(1.05); }
+
+/* Section Headings */
+section h2 { color: #ff66b2; text-align: center; margin-bottom: 40px; }
+
+/* Footer */
+footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; font-size: 0.9rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1.1rem; }
+  .staff-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -59,26 +67,56 @@
   </ul>
 </nav>
 
-<!-- Join Buttons -->
-<section class="join-buttons">
-  <h2>Join the Community 🌈</h2>
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Join Ur Gay Now 🌈</h1>
+  <p>Be part of our safe and fun community! Click below to join Discord or explore our VRChat group.</p>
   <a href="https://discord.gg/aDuM9ePXAt" class="btn" target="_blank">Join Discord</a>
   <a href="https://vrchat.com/home/group/grp_57e21db6-b1b6-44a0-bc1e-d1f744ab6132" class="btn" target="_blank">Visit VRChat Group</a>
 </section>
 
-<!-- Staff Members Section -->
-<section class="staff-section">
-  <h2>Meet Our Staff ✨</h2>
-
-  <!-- Admin / Founder -->
+<!-- Staff Section -->
+<section>
+  <h2>Our Staff Team 👥</h2>
   <div class="staff-grid">
-    <div class="staff-card">
-      <h3>UGN Admin Acc</h3>
-      <p>Group Holder</p>
-    </div>
-    <div class="staff-card">
-      <h3>I~_O R E O_~I</h3>
-      <p>Founder</p>
-    </div>
-    <div class="sta
+    <!-- Admin Accounts -->
+    <div class="staff-card"><h3>Founder</h3><p>I~_O R E O_~I</p></div>
+    <div class="staff-card"><h3>Founder</h3><p>Ace The Puppo</p></div>
+    <div class="staff-card"><h3>Co-Founder</h3><p>༒Pups Afton ༒</p></div>
+    <div class="staff-card"><h3>Co-Owner</h3><p>༒豆Tofuu腐༒</p></div>
+    
+    <!-- Safeguarding -->
+    <div class="staff-card"><h3>Safeguarding</h3><p>Neon-bean</p></div>
+    <div class="staff-card"><h3>Safeguarding</h3><p>Licorcegabe</p></div>
+
+    <!-- Admin -->
+    <div class="staff-card"><h3>Admin</h3><p>gamezgame11</p></div>
+    <div class="staff-card"><h3>Admin</h3><p>MalluTheDragon</p></div>
+
+    <!-- Staff -->
+    <div class="staff-card"><h3>Staff</h3><p>Just_A_Door</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>Dalek-D2</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>ApplePieYes</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>Floyd Da Femboy</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>MrBDR</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>river1509</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>HilriousBarks</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>༒sᴜɴɴʏ_ᴘʜᴏᴇɴɪx༒</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>sunnyrise․306378 e043</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>WingStrik101 5583</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>sissyboyk8</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>LucanXD eed4</p></div>
+    <div class="staff-card"><h3>Staff</h3><p>lilly_the_nova</p></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Ur Gay Now, a place to be u and urself 🌈</p>
+  <p>&copy; 2025 Ur Gay Now</p>
+</footer>
+
+</body>
+</html>
+
 
