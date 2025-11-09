@@ -6,51 +6,79 @@
 <title>Ur Gay Now | Join & Staff</title>
 <link rel="stylesheet" href="style.css">
 <style>
-/* Staff Cards */
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  max-width: 1000px;
-  margin: 40px auto;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #2e2e2e;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
-.staff-card {
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
   background: #222;
-  padding: 20px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
-.staff-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
-.staff-card h3 { color: #00d0e0; margin-bottom: 10px; font-size: 1.2rem; }
-.staff-card p { color: #ccc; font-size: 0.95rem; }
+nav h1 { color: #ff66b2; }
+nav ul { list-style: none; display: flex; gap: 25px; margin: 0; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: 600; transition: 0.3s; }
+nav ul li a:hover { color: #00d0e0; }
 
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 120px 20px 80px;
-  background: linear-gradient(135deg, #ff66b2, #00d0e0);
-  color: #fff;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  padding: 100px 20px;
 }
-.hero h1 { font-size: 3rem; margin-bottom: 20px; }
-.hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
-.hero .btn { display: inline-block; padding: 18px 40px; border-radius: 12px; background: #ff66b2; color: #fff; font-weight: 600; margin: 10px 10px; text-decoration: none; transition: 0.3s; }
-.hero .btn:hover { background: #00d0e0; transform: scale(1.05); }
+.hero h1 { font-size: 2.8rem; color: #ff66b2; margin-bottom: 20px; }
+.hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #ccc; line-height: 1.6; }
 
-/* Section Headings */
-section h2 { color: #ff66b2; text-align: center; margin-bottom: 40px; }
+/* Accordion */
+.accordion { max-width: 900px; margin: 40px auto; border-radius: 12px; overflow: hidden; }
+.accordion-item { margin-bottom: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.accordion-header { background: #222; padding: 15px 20px; cursor: pointer; font-weight: 600; transition: 0.3s; color: #fff; }
+.accordion-header:hover { background: #ff66b2; }
+.accordion-content { display: none; padding: 15px 20px; background: #111; color: #ccc; }
+
+/* Buttons Section */
+.buttons {
+  text-align: center;
+  padding: 60px 20px;
+  background: #3b3b3b;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.buttons a {
+  display: inline-block;
+  padding: 18px 40px;
+  border-radius: 12px;
+  background: #ff66b2;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.buttons a:hover { background: #00d0e0; transform: scale(1.05); }
 
 /* Footer */
-footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; font-size: 0.9rem; }
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  background: #222;
+  color: #aaa;
+  font-size: 0.9rem;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.2rem; }
   .hero p { font-size: 1.1rem; }
-  .staff-grid { grid-template-columns: 1fr; }
+  .buttons { flex-direction: column; }
 }
 </style>
 </head>
@@ -69,45 +97,89 @@ footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; 
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Join Ur Gay Now 🌈</h1>
-  <p>Be part of our safe and fun community! Click below to join Discord or explore our VRChat group.</p>
-  <a href="https://discord.gg/aDuM9ePXAt" class="btn" target="_blank">Join Discord</a>
-  <a href="https://vrchat.com/home/group/grp_57e21db6-b1b6-44a0-bc1e-d1f744ab6132" class="btn" target="_blank">Visit VRChat Group</a>
+  <h1>Join & Meet the Staff 🌈</h1>
+  <p>Welcome! Here you can see all staff members, how to join the community, and learn about the rules. Feel free to explore and get to know our team!</p>
 </section>
 
-<!-- Staff Section -->
-<section>
-  <h2>Our Staff Team 👥</h2>
-  <div class="staff-grid">
-    <!-- Admin Accounts -->
-    <div class="staff-card"><h3>Founder</h3><p>I~_O R E O_~I</p></div>
-    <div class="staff-card"><h3>Founder</h3><p>Ace The Puppo</p></div>
-    <div class="staff-card"><h3>Co-Founder</h3><p>༒Pups Afton ༒</p></div>
-    <div class="staff-card"><h3>Co-Owner</h3><p>༒豆Tofuu腐༒</p></div>
-    
-    <!-- Safeguarding -->
-    <div class="staff-card"><h3>Safeguarding</h3><p>Neon-bean</p></div>
-    <div class="staff-card"><h3>Safeguarding</h3><p>Licorcegabe</p></div>
-
-    <!-- Admin -->
-    <div class="staff-card"><h3>Admin</h3><p>gamezgame11</p></div>
-    <div class="staff-card"><h3>Admin</h3><p>MalluTheDragon</p></div>
-
-    <!-- Staff -->
-    <div class="staff-card"><h3>Staff</h3><p>Just_A_Door</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>Dalek-D2</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>ApplePieYes</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>Floyd Da Femboy</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>MrBDR</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>river1509</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>HilriousBarks</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>༒sᴜɴɴʏ_ᴘʜᴏᴇɴɪx༒</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>sunnyrise․306378 e043</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>WingStrik101 5583</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>sissyboyk8</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>LucanXD eed4</p></div>
-    <div class="staff-card"><h3>Staff</h3><p>lilly_the_nova</p></div>
+<!-- Staff Accordion -->
+<section class="accordion">
+  <div class="accordion-item">
+    <div class="accordion-header">🌟 Group Holder / Founder</div>
+    <div class="accordion-content">
+      <ul>
+        <li>I~_O R E O_~I</li>
+        <li>Ace The Puppo</li>
+      </ul>
+    </div>
   </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">🌟 Co-Founder</div>
+    <div class="accordion-content">
+      <ul>
+        <li>༒Pups Afton ༒</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">🌟 Co-Owner</div>
+    <div class="accordion-content">
+      <ul>
+        <li>༒豆Tofuu腐༒</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">🛡 Safeguarding</div>
+    <div class="accordion-content">
+      <ul>
+        <li>Neon-bean</li>
+        <li>Licorcegabe</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">🛠 Admin</div>
+    <div class="accordion-content">
+      <ul>
+        <li>gamezgame11</li>
+        <li>MalluTheDragon</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">👥 Staff Members</div>
+    <div class="accordion-content">
+      <ul>
+        <li>Just_A_Door</li>
+        <li>Dalek-D2</li>
+        <li>ApplePieYes</li>
+        <li>Floyd Da Femboy</li>
+        <li>MrBDR</li>
+        <li>river1509</li>
+        <li>HilriousBarks</li>
+        <li>༒sᴜɴɴʏ_ᴘʜᴏᴇɴɪx༒</li>
+        <li>sunnyrise․306378 e043</li>
+        <li>WingStrik101 5583</li>
+        <li>sissyboyk8</li>
+        <li>LucanXD eed4</li>
+        <li>lilly_the_nova</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Buttons Section -->
+<section class="buttons">
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="tos.html">Terms of Service</a>
+  <a href="https://discord.gg/aDuM9ePXAt" target="_blank">Join Discord</a>
+  <a href="https://vrchat.com/home/group/grp_57e21db6-b1b6-44a0-bc1e-d1f744ab6132" target="_blank">Visit VRChat Group</a>
 </section>
 
 <!-- Footer -->
@@ -116,7 +188,30 @@ footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; 
   <p>&copy; 2025 Ur Gay Now</p>
 </footer>
 
+<script>
+// Accordion toggle
+const headers = document.querySelectorAll('.accordion-header');
+headers.forEach(header => {
+  header.addEventListener('click', () => {
+    const openItem = document.querySelector('.accordion-content.show');
+    if(openItem && openItem !== header.nextElementSibling) {
+      openItem.classList.remove('show');
+      openItem.style.display = 'none';
+    }
+    const content = header.nextElementSibling;
+    if(content.style.display === "block") {
+      content.style.display = "none";
+      content.classList.remove('show');
+    } else {
+      content.style.display = "block";
+      content.classList.add('show');
+    }
+  });
+});
+</script>
+
 </body>
 </html>
+
 
 
