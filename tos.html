@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ur Gay Now | Terms of Service</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <h1>Ur Gay Now</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="tos.html">Terms of Service</a></li>
+    <li><a href="join.html">Join</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h2>Terms of Service 📄</h2>
+  <p>Welcome to Ur Gay Now! Please follow these rules to keep our server safe, fun, and welcoming for everyone.</p>
+</section>
+
+<!-- Terms Sections -->
+<section>
+  <div class="accordion">
+    <div class="accordion-header">Who Can Use the Bot</div>
+    <div class="accordion-content">
+      <p>The Ur Gay Now Bot is exclusive to the Ur Gay Now Discord server. Users must be 13+ and follow Discord's ToS.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">What You Can't Do</div>
+    <div class="accordion-content">
+      <p>No abusing, spamming, or exploiting the bot. Reverse engineering or modifying the bot is forbidden.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">Bot Moderation & Safety</div>
+    <div class="accordion-content">
+      <p>The bot helps staff maintain a safe server. Commands include mute, kick, and banish. Use them responsibly.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">Fun Features & Rules</div>
+    <div class="accordion-content">
+      <p>Enjoy hugs, Poppy messages, adopting dinos, and other fun features while respecting server rules and boundaries.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">Data & Privacy</div>
+    <div class="accordion-content">
+      <p>The bot may collect basic data like IDs and roles to function properly. We do not share or sell your data.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">Staff Decisions</div>
+    <div class="accordion-content">
+      <p>Staff decisions are final. Avoid arguing with staff to maintain a positive environment.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">Downtime & Bugs</div>
+    <div class="accordion-content">
+      <p>The bot is provided “as is.” Staff will try to fix issues, but they are not liable for downtime or bugs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Ur Gay Now, a place to be u and urself 🌈</p>
+  <p>&copy; 2025 Ur Gay Now</p>
+</footer>
+
+<!-- Accordion Script -->
+<script>
+  const headers = document.querySelectorAll('.accordion-header');
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const isOpen = content.style.display === 'block';
+      document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+      content.style.display = isOpen ? 'none' : 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
 
