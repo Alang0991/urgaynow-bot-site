@@ -21,12 +21,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 40px;
-  background: rgba(30, 30, 30, 0.9);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 20px 40px;
+  background: rgba(30,30,30,0.9);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
 }
 nav h1 {
@@ -45,7 +42,7 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 nav ul li a:hover {
   color: #00d0e0;
@@ -55,17 +52,18 @@ nav ul li a:hover {
 /* 💖 Hero Section */
 .hero {
   text-align: center;
-  padding: 90px 20px 60px;
+  padding: 100px 20px 60px;
 }
 .hero h1 {
   font-size: 3rem;
   color: #ff66b2;
-  text-shadow: 0 0 10px rgba(255, 102, 178, 0.6);
-  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(255,102,178,0.6);
+  margin-bottom: 20px;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 .hero p {
   font-size: 1.2rem;
-  max-width: 720px;
+  max-width: 700px;
   margin: 0 auto;
   color: #ccc;
   line-height: 1.6;
@@ -83,9 +81,6 @@ nav ul li a:hover {
   border-bottom: 1px solid #555;
   background: #2b2b2b;
   transition: 0.3s;
-}
-.accordion-item:last-child {
-  border-bottom: none;
 }
 .accordion-header {
   padding: 18px 25px;
@@ -108,6 +103,10 @@ nav ul li a:hover {
   color: #ccc;
   transition: max-height 0.35s ease, padding 0.35s ease;
 }
+.accordion-content.show {
+  max-height: 1000px;
+  padding: 15px 25px;
+}
 
 /* 🌸 Staff Grid & Cards */
 .staff-grid {
@@ -123,12 +122,12 @@ nav ul li a:hover {
   border-radius: 12px;
   text-align: center;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .staff-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 208, 224, 0.6);
+  box-shadow: 0 8px 25px rgba(0,208,224,0.6);
 }
 .staff-card .staff-role {
   font-size: 0.85rem;
@@ -156,22 +155,38 @@ nav ul li a:hover {
   font-weight: 600;
   text-decoration: none;
   transition: 0.3s;
-  box-shadow: 0 0 15px rgba(255, 102, 178, 0.5);
+  box-shadow: 0 0 15px rgba(255,102,178,0.5);
 }
 .buttons a:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #00d0e0;
 }
 
+/* 🌟 Clock & Date Section */
+#clock-date {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1.2rem;
+  color: #00d0e0;
+  font-weight: 600;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
 /* 🌈 Footer */
 footer {
   text-align: center;
-  padding: 40px 20px;
+  padding: 50px 20px;
   background: #1a1a1a;
   color: #aaa;
   font-size: 0.9rem;
   border-top: 2px solid #ff66b2;
-  box-shadow: 0 -2px 15px rgba(255, 102, 178, 0.3);
+  box-shadow: 0 -2px 15px rgba(255,102,178,0.3);
+}
+
+/* 🌟 Animations */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #ff66b2, 0 0 10px #00d0e0; }
+  100% { text-shadow: 0 0 20px #ff66b2, 0 0 30px #00d0e0; }
 }
 
 /* 📱 Responsive */
@@ -179,6 +194,7 @@ footer {
   .hero h1 { font-size: 2.2rem; }
   .hero p { font-size: 1.1rem; }
   .buttons { flex-direction: column; }
+  #clock-date { font-size: 1rem; }
 }
 </style>
 </head>
@@ -199,13 +215,12 @@ footer {
 <!-- Hero Section -->
 <section class="hero">
   <h1>Join & Meet Our Staff 🌟</h1>
-  <p>Welcome! Here you can join Ur Gay Now, check out our Discord server and VRChat group, and meet all our amazing staff members!</p>
+  <p>Welcome! Check out our Discord, VRChat group, and all amazing staff members!</p>
 </section>
 
 <!-- Accordion -->
 <section class="accordion">
 
-  <!-- Discord -->
   <div class="accordion-item">
     <div class="accordion-header">🌐 Discord Server</div>
     <div class="accordion-content">
@@ -213,7 +228,6 @@ footer {
     </div>
   </div>
 
-  <!-- VRChat -->
   <div class="accordion-item">
     <div class="accordion-header">🕹️ VRChat Group</div>
     <div class="accordion-content">
@@ -221,7 +235,6 @@ footer {
     </div>
   </div>
 
-  <!-- Founders & Co-Owners -->
   <div class="accordion-item">
     <div class="accordion-header">🏆 Founders & Co-Owners</div>
     <div class="accordion-content">
@@ -234,7 +247,6 @@ footer {
     </div>
   </div>
 
-  <!-- Safeguarding -->
   <div class="accordion-item">
     <div class="accordion-header">🛡️ Safeguarding</div>
     <div class="accordion-content">
@@ -245,7 +257,6 @@ footer {
     </div>
   </div>
 
-  <!-- Admin -->
   <div class="accordion-item">
     <div class="accordion-header">💻 Admin</div>
     <div class="accordion-content">
@@ -256,7 +267,6 @@ footer {
     </div>
   </div>
 
-  <!-- Staff -->
   <div class="accordion-item">
     <div class="accordion-header">👥 Staff</div>
     <div class="accordion-content">
@@ -280,12 +290,20 @@ footer {
 
 </section>
 
-<!-- Bottom Buttons -->
+<!-- Buttons -->
 <section class="buttons">
   <a href="index.html">Home</a>
   <a href="events.html">Events</a>
   <a href="privacy.html">Privacy Policy</a>
   <a href="tos.html">Terms of Service</a>
+</section>
+
+<!-- Clock & Date -->
+<div id="clock-date"></div>
+
+<!-- Visitor Counter -->
+<section style="text-align:center; padding:20px;">
+  <p style="color:#ff66b2; font-weight:600;">Website Visitors: <span id="visitor-count">0</span></p>
 </section>
 
 <!-- Footer -->
@@ -294,20 +312,41 @@ footer {
   <p>&copy; 2025 Ur Gay Now</p>
 </footer>
 
-<!-- Accordion Script -->
 <script>
+// 🌟 Accordion Functionality
 const headers = document.querySelectorAll('.accordion-header');
 headers.forEach(header => {
   header.addEventListener('click', () => {
-    const openItem = document.querySelector('.accordion-content.show');
     const content = header.nextElementSibling;
-    if (openItem && openItem !== content) {
-      openItem.classList.remove('show');
+    const currentlyOpen = document.querySelector('.accordion-content.show');
+    if(currentlyOpen && currentlyOpen !== content){
+      currentlyOpen.classList.remove('show');
     }
     content.classList.toggle('show');
   });
 });
+
+// 🌟 Clock & Date
+function updateClock() {
+  const now = new Date();
+  const options = { weekday:'long', year:'numeric', month:'long', day:'numeric' };
+  const date = now.toLocaleDateString(undefined, options);
+  const time = now.toLocaleTimeString();
+  document.getElementById('clock-date').textContent = `${date} | ${time}`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// 🌟 Visitor Counter (simple localStorage demo)
+if(!localStorage.getItem('visits')) localStorage.setItem('visits','0');
+let visits = parseInt(localStorage.getItem('visits')) + 1;
+localStorage.setItem('visits', visits);
+document.getElementById('visitor-count').textContent = visits;
 </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
