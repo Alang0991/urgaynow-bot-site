@@ -1,264 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ur Gay Now Bot | Policies</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Reset */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ur Gay Now | Bot & Server</title>
+<style>
+  /* General Reset */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+  }
 
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #111111cc;
-      backdrop-filter: blur(8px);
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      z-index: 100;
-    }
-    nav a {
-      color: #00d0e0;
-      text-decoration: none;
-      margin: 0 25px;
-      font-weight: 700;
-      font-size: 1.1em;
-      transition: 0.3s;
-    }
-    nav a:hover { color: #ff66b2; }
+  a { text-decoration: none; color: inherit; }
 
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: 120px auto 60px;
-      padding: 20px;
-    }
+  /* Navbar */
+  nav {
+    position: sticky;
+    top: 0;
+    background: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    z-index: 1000;
+  }
+  nav h1 { color: #ff66b2; font-size: 1.8rem; }
+  nav ul { display: flex; gap: 20px; list-style: none; }
+  nav ul li a { color: #fff; font-weight: 600; transition: 0.3s; }
+  nav ul li a:hover { color: #00d0e0; }
 
-    /* Page Title */
-    h1 {
-      text-align: center;
-      font-size: 2.8em;
-      margin-bottom: 30px;
-      color: #ff66b2;
-      text-shadow: 0 0 10px rgba(255,102,178,0.6);
-    }
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 100px 20px 60px;
+    background: linear-gradient(135deg, #ff66b2, #00d0e0);
+    color: #fff;
+  }
+  .hero h2 { font-size: 2rem; margin-bottom: 15px; }
+  .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
 
-    /* Accordion */
-    .accordion {
-      background: #333333;
-      color: #f5f5f5;
-      cursor: pointer;
-      padding: 18px 25px;
-      width: 100%;
-      border: none;
-      outline: none;
-      border-radius: 15px;
-      margin-bottom: 15px;
-      font-size: 1.25em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
-    .accordion:hover { background: #444444; }
-    .accordion::after { content: '+ '; font-size: 1.3em; transition: 0.3s; }
-    .accordion.active::after { content: '- '; }
+  /* Sections */
+  section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+  section h2 { color: #ff66b2; margin-bottom: 20px; font-size: 1.8rem; }
+  section p, section li { margin-bottom: 15px; }
 
-    .panel {
-      display: none;
-      background: linear-gradient(135deg, #222222, #1a1a1a);
-      padding: 20px 25px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      overflow: hidden;
-      animation: fadeIn 0.3s ease forwards;
-    }
+  /* Cards / Features */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .feature-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+  }
+  .feature-card:hover { transform: translateY(-5px); }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  /* Accordion */
+  .accordion {
+    background: #222;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .accordion-header {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    background: #333;
+    border-radius: 10px;
+  }
+  .accordion-content {
+    display: none;
+    padding: 15px 20px;
+    border-top: 1px solid #444;
+  }
 
-    h3 {
-      color: #00d0e0;
-      margin: 15px 0 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px 5px 0 0;
+    border-radius: 12px;
+    background: #ff66b2;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  .btn:hover { background: #00d0e0; }
 
-    ul {
-      list-style-type: "🌸 ";
-      padding-left: 20px;
-      margin-bottom: 10px;
-    }
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #222;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
 
-    code {
-      background: #00d0e0;
-      color: #000;
-      padding: 4px 7px;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .highlight { color: #00d0e0; font-weight: bold; }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      padding: 20px 0;
-      font-size: 0.9em;
-      color: #ccc;
-    }
-
-    /* Scroll to top button */
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #ff66b2;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.5em;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      display: none;
-      z-index: 100;
-      transition: 0.3s;
-    }
-    #scrollTopBtn:hover { background: #00d0e0; }
-
-    a { color: #00d0e0; text-decoration: none; transition: 0.3s; }
-    a:hover { color: #ff66b2; text-decoration: underline; }
-
-    @media (max-width: 600px) {
-      .accordion { font-size: 1.1em; padding: 15px 18px; }
-      h1 { font-size: 2.2em; }
-    }
-  </style>
+  @media (max-width: 768px) {
+    nav { flex-direction: column; gap: 10px; }
+  }
+</style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#privacy">Privacy Policy</a>
-    <a href="#tos">Terms of Service</a>
-  </nav>
+<!-- Navbar -->
+<nav>
+  <h1>Ur Gay Now</h1>
+  <ul>
+    <li><a href="#bot">Bot</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#rules">Rules</a></li>
+    <li><a href="#join">Join</a></li>
+  </ul>
+</nav>
 
-  <div class="container">
+<!-- Hero -->
+<section class="hero">
+  <h2>Welcome to Ur Gay Now 🌈</h2>
+  <p>A safe, fun, and welcoming space to be yourself. Our bot helps moderate the server and bring fun features like adopting dinos! Join us and be part of the community.</p>
+</section>
 
-    <h1>🌈 Ur Gay Now Bot Policies</h1>
-
-    <!-- Privacy Policy -->
-    <button class="accordion" id="privacy">Privacy Policy 🌐</button>
-    <div class="panel">
-      <p><strong>Last Updated:</strong> November 9th, 2025</p>
-
-      <h3>💁 What Data We Collect</h3>
-      <ul>
-        <li>Discord User IDs</li>
-        <li>Discord Server ID</li>
-        <li>Role Names for permissions & moderation</li>
-      </ul>
-
-      <h3>🔐 How We Use Your Data</h3>
-      <p>Used only to ensure proper operation of the <strong>Ur Gay Now Bot</strong> in the official server.</p>
-
-      <h3>🚫 Server Access Restriction</h3>
-      <p>Bot is exclusive to the <span class="highlight">Ur Gay Now</span> server and cannot be used elsewhere.</p>
-
-      <h3>❌ What We Don't Do</h3>
-      <ul>
-        <li>No unnecessary personal data collection</li>
-        <li>No sharing with third parties</li>
-        <li>No selling or marketing your info</li>
-      </ul>
-
-      <h3>🛠 Data Retention</h3>
-      <p>Data is stored only while the bot operates. Removal clears all associated data.</p>
-
-      <h3>🔒 Your Rights</h3>
-      <p>Request data deletion through server staff (may affect bot features).</p>
+<!-- About Bot -->
+<section id="bot">
+  <h2>Meet the Bot 🤖</h2>
+  <p>Ur Gay Now Bot helps welcome new members, moderate the server, and keep the community safe and fun for everyone.</p>
+  <div class="features">
+    <div class="feature-card">
+      <h3>Welcome Members</h3>
+      <p>Automatically greet new members and make them feel at home.</p>
     </div>
-
-    <!-- Terms of Service -->
-    <button class="accordion" id="tos">Terms of Service 📜</button>
-    <div class="panel">
-      <p><strong>Last Updated:</strong> November 9th, 2025</p>
-
-      <h3>💁 Overview</h3>
-      <p><strong>Ur Gay Now Bot</strong> is private and exclusive to the <span class="highlight">Ur Gay Now</span> Discord server. Provides moderation, staff utilities, and fun commands.</p>
-
-      <h3>👥 Authorized Use</h3>
-      <ul>
-        <li>Strictly exclusive to <span class="highlight">Ur Gay Now</span></li>
-        <li>Use outside the server is prohibited</li>
-        <li>Must follow <a href="https://discord.com/terms" target="_blank">Discord ToS</a> & <a href="https://discord.com/guidelines" target="_blank">Guidelines</a></li>
-      </ul>
-
-      <h3>❌ Prohibited Actions</h3>
-      <ul>
-        <li>No abuse, spam, or exploitation</li>
-        <li>No reverse engineering or modification</li>
-        <li>No harassment or rule-breaking</li>
-      </ul>
-
-      <h3>🔐 Data & Privacy</h3>
-      <p>Minimal data is collected (User IDs, Role Names, Server IDs). See the Privacy Policy above.</p>
-
-      <h3>🛠 Downtime & Liability</h3>
-      <p>Bot is provided “as is.” Not responsible for downtime or data loss.</p>
-
-      <h3>📬 Contact</h3>
-      <p>For questions, contact server staff.</p>
+    <div class="feature-card">
+      <h3>Moderation Tools</h3>
+      <p>Includes <strong>mute</strong>, <strong>kick</strong>, and <strong>banish</strong> commands for staff.</p>
     </div>
-
+    <div class="feature-card">
+      <h3>Fun Features</h3>
+      <p>Interact with members via hugs, Poppy messages, creepy VHS tapes, and even adopting dinos! 🦖</p>
+    </div>
+    <div class="feature-card">
+      <h3>Staff Utilities</h3>
+      <p>Manage the server safely and efficiently with easy-to-use commands.</p>
+    </div>
   </div>
+</section>
 
-  <!-- Scroll to Top -->
-  <button id="scrollTopBtn">↑</button>
+<!-- Privacy Policy -->
+<section id="privacy">
+  <h2>Privacy Policy 🔒</h2>
+  <div class="accordion">
+    <div class="accordion-header">What Data We Collect</div>
+    <div class="accordion-content">
+      <p>We collect Discord User IDs, Server IDs, and Role Names to ensure the bot functions properly.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">How We Use Your Data</div>
+    <div class="accordion-content">
+      <p>Your data is only used for bot functionality, including moderation and welcome commands.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">What We Don't Do</div>
+    <div class="accordion-content">
+      <p>We do not share, sell, or use your information for marketing purposes.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>Thank you for being part of <strong>Ur Gay Now</strong> 💖</p>
-    <p>© 2025 Ur Gay Now | All Rights Reserved</p>
-  </footer>
+<!-- Rules -->
+<section id="rules">
+  <h2>Server Rules 📜</h2>
+  <div class="accordion">
+    <div class="accordion-header">Rules Summary</div>
+    <div class="accordion-content">
+      <ul>
+        <li>Age Requirement: 13+ only.</li>
+        <li>Have Fun & Be Respectful: Respect others and personal space.</li>
+        <li>Content Guidelines: No NSFW, hateful, or grotesque content. Clothing required on avatars.</li>
+        <li>No Malicious Behavior: No trolling, doxxing, threats, crashers, or cheating.</li>
+        <li>Staff Authority: Staff decisions are final; follow instructions and contact staff if needed.</li>
+        <li>No Spam or Ads: Self-promotion needs approval.</li>
+        <li>Sensitive Topics: Avoid politics, religious debates, or offensive historical topics.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <script>
-    // Accordion functionality
-    const accordions = document.querySelectorAll(".accordion");
-    accordions.forEach(acc => {
-      acc.addEventListener("click", () => {
-        acc.classList.toggle("active");
-        const panel = acc.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-      });
+<!-- Join Section -->
+<section id="join">
+  <h2>Join Us! 🎉</h2>
+  <p>Become part of the Ur Gay Now community:</p>
+  <a href="https://discord.gg/aDuM9ePXAt" class="btn" target="_blank">Join Discord</a>
+  <a href="https://vrchat.com/home/group/grp_57e21db6-b1b6-44a0-bc1e-d1f744ab6132" class="btn" target="_blank">Visit VRChat Group</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Ur Gay Now, a place to be u and urself 🌈</p>
+  <p>&copy; 2025 Ur Gay Now</p>
+</footer>
+
+<!-- Accordion Script -->
+<script>
+  const headers = document.querySelectorAll('.accordion-header');
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const isOpen = content.style.display === 'block';
+      document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+      content.style.display = isOpen ? 'none' : 'block';
     });
-
-    // Scroll to top button
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = () => {
-      scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    };
-    scrollTopBtn.addEventListener("click", () => window.scrollTo({top: 0, behavior: 'smooth'}));
-  </script>
+  });
+</script>
 
 </body>
 </html>
+
