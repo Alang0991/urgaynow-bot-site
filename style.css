@@ -1,46 +1,144 @@
-/* style.css */
+/* 🌈 General Page Styles */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #2e2e2e;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top left, #2e2e2e 0%, #1a1a1a 100%);
     color: #fff;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-/* Navbar */
+/* 🌟 Navbar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: #222;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    background: rgba(30, 30, 30, 0.9);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
-nav h1 { color: #ff66b2; margin: 0; }
-nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
-nav ul li a { color: #fff; text-decoration: none; font-weight: 600; transition: 0.3s; }
-nav ul li a:hover { color: #00d0e0; }
+nav h1 {
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, #ff66b2, #00d0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: #00d0e0;
+    text-shadow: 0 0 8px #00d0e0;
+}
 
-/* Hero Section */
+/* 💖 Hero Section */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px 60px;
 }
-.hero h1 { font-size: 2.8rem; color: #ff66b2; margin-bottom: 20px; }
-.hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #ccc; line-height: 1.6; }
+.hero h1 {
+    font-size: 3rem;
+    color: #ff66b2;
+    text-shadow: 0 0 10px rgba(255,102,178,0.6);
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #ccc;
+    line-height: 1.6;
+}
 
-/* Accordion */
-.accordion { max-width: 900px; margin: 40px auto; border-radius: 12px; overflow: hidden; }
-.accordion-item { margin-bottom: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-.accordion-header { background: #222; padding: 15px 20px; cursor: pointer; font-weight: 600; transition: 0.3s; color: #fff; }
-.accordion-header:hover { background: #ff66b2; }
-.accordion-content { display: none; padding: 15px 20px; background: #111; color: #ccc; }
+/* 🎀 Accordion */
+.accordion {
+    max-width: 1000px;
+    margin: 40px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+.accordion-item {
+    border-bottom: 1px solid #555;
+    background: #2b2b2b;
+    transition: 0.3s;
+}
+.accordion-item:last-child {
+    border-bottom: none;
+}
+.accordion-header {
+    padding: 18px 25px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #ff66b2;
+    background: #2e2e2e;
+    transition: 0.3s ease;
+}
+.accordion-header:hover {
+    background: #3d3d3d;
+    color: #00d0e0;
+    text-shadow: 0 0 6px #00d0e0;
+}
+.accordion-content {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    background: #3b3b3b;
+    color: #ccc;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+}
+.accordion-content.show {
+    max-height: 1000px;
+    padding: 15px 25px;
+}
 
-/* Buttons Section */
+/* 🌸 Staff Grid & Cards */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+.staff-card {
+    background: linear-gradient(145deg, #ff66b2, #00d0e0);
+    color: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.staff-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,208,224,0.6);
+}
+.staff-card .staff-role {
+    font-size: 0.85rem;
+    color: #fff;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+
+/* 🌸 Buttons Section */
 .buttons {
     text-align: center;
-    padding: 60px 20px;
-    background: #3b3b3b;
+    padding: 50px 20px;
+    background: #2e2e2e;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -48,26 +146,32 @@ nav ul li a:hover { color: #00d0e0; }
 }
 .buttons a {
     display: inline-block;
-    padding: 18px 40px;
+    padding: 15px 35px;
     border-radius: 12px;
-    background: #ff66b2;
+    background: linear-gradient(90deg, #ff66b2, #00d0e0);
     color: #fff;
     font-weight: 600;
     text-decoration: none;
     transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255,102,178,0.5);
 }
-.buttons a:hover { background: #00d0e0; transform: scale(1.05); }
+.buttons a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00d0e0;
+}
 
-/* Footer */
+/* 🌈 Footer */
 footer {
     text-align: center;
-    padding: 50px 20px;
-    background: #222;
+    padding: 40px 20px;
+    background: #1a1a1a;
     color: #aaa;
     font-size: 0.9rem;
+    border-top: 2px solid #ff66b2;
+    box-shadow: 0 -2px 15px rgba(255,102,178,0.3);
 }
 
-/* Responsive */
+/* 📱 Responsive */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.2rem; }
     .hero p { font-size: 1.1rem; }
