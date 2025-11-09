@@ -22,48 +22,77 @@
       align-items: center;
     }
 
-    nav h1 { color: #ff66b2; }
+    nav h1 { color: #ff66b2; margin: 0; }
     nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
     nav ul li a { color: #fff; text-decoration: none; }
+    nav ul li a:hover { color: #ff66b2; }
 
     .hero {
       text-align: center;
+      padding: 60px 20px;
+      background: #444;
+    }
+
+    .hero h1 { color: #ff66b2; margin-bottom: 10px; font-size: 2.5rem; }
+    .hero p { color: #ddd; font-size: 1.1rem; }
+
+    .events {
       padding: 40px 20px;
       background: #444;
+      text-align: center;
     }
 
-    .hero h1 { color: #ff66b2; margin-bottom: 10px; }
-    .hero p { color: #ddd; }
+    .events h2 {
+      color: #ff66b2;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
 
-    .events-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    #event-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 20px;
-      padding: 20px;
     }
 
-    .event-card {
-      background: #444;
-      padding: 15px;
+    .event-item {
+      background: #555;
+      padding: 20px;
       border-radius: 12px;
+      width: 100%;
+      max-width: 500px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       transition: transform 0.2s;
+      text-align: left;
     }
 
-    .event-card:hover { transform: translateY(-5px); }
+    .event-item:hover {
+      transform: translateY(-5px);
+    }
 
-    .event-card h3 { color: #ff66b2; margin-bottom: 8px; }
-    .event-card p { margin: 4px 0; }
-    .label {
+    .event-item h3 {
+      color: #ff66b2;
+      margin-bottom: 10px;
+    }
+
+    .event-item p {
+      margin: 6px 0;
+    }
+
+    .join-btn {
       display: inline-block;
-      padding: 2px 6px;
-      border-radius: 5px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 5px;
+      margin-top: 10px;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: #555;
+      color: #fff;
+      transition: background 0.2s;
     }
-    .discord { background: #7289da; color: #fff; }
-    .vrchat { background: #00d0e0; color: #000; }
+
+    .join-btn:hover {
+      background: #ff66b2;
+    }
 
     .buttons {
       display: flex;
@@ -110,8 +139,9 @@
   <p>Check out our upcoming events! Updated automatically from our Google Sheet.</p>
 </section>
 
-<section class="events-container" id="events">
-  <!-- Events will appear here dynamically -->
+<section class="events" id="events">
+  <h2>Upcoming Events 🎉</h2>
+  <div id="event-list"></div>
 </section>
 
 <section class="buttons">
@@ -127,35 +157,32 @@
 </footer>
 
 <script>
-const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR8dMlv6RljdRiDnZi32LTJOYWpXflIjygwJXIo6vEAob0jnYvk_5TVe_ZAnl4SJKC_wTPHvugAyNUt/gviz/tq?tqx=out:json&gid=1098487772";
+const sheetURL = "https://opensheet.elk.sh/1hvu8lnFeLQfE2zAQX8Nmx5m8_u__fVIoYnDPUMzWCy0/Events";
 
-fetch(sheetUrl)
-  .then(res => res.text())
+fetch(sheetURL)
+  .then(res => res.json())
   .then(data => {
-    const jsonData = JSON.parse(data.substring(47).slice(0, -2));
-    const rows = jsonData.table.rows;
-    const container = document.getElementById("events");
+    const list = document.getElementById("event-list");
 
-    rows.forEach(row => {
-      const name = row.c[0] ? row.c[0].v : "No Title";
-      const date = row.c[1] ? row.c[1].v : "No Date";
-      const desc = row.c[2] ? row.c[2].v : "";
-      const type = row.c[3] ? row.c[3].v.toLowerCase() : ""; // Discord or VRChat
+    data.forEach(event => {
+      const item = document.createElement("div");
+      item.className = "event-item";
 
-      const card = document.createElement("div");
-      card.className = "event-card";
-      card.innerHTML = `
-        ${type ? `<span class="label ${type === 'discord' ? 'discord' : 'vrchat'}">${type.toUpperCase()}</span>` : ''}
-        <h3>${name}</h3>
-        <p><strong>Date:</strong> ${date}</p>
-        <p>${desc}</p>
+      item.innerHTML = `
+        <h3>${event["Event Name"] || "No Title"}</h3>
+        <p><strong>Start:</strong> ${event["Start Date"] || "TBD"} | <strong>End:</strong> ${event["End Date"] || "TBD"}</p>
+        <p><strong>Organizer:</strong> ${event["Organizer"] || "Unknown"}</p>
+        <p><strong>Reason:</strong> ${event["Reason"] || ""}</p>
+        ${event["Link"] ? `<a href="${event["Link"]}" target="_blank" class="join-btn">Join Event</a>` : ''}
       `;
-      container.appendChild(card);
+
+      list.appendChild(item);
     });
   })
-  .catch(err => console.error("Failed to fetch events:", err));
+  .catch(err => console.error("Failed to load events:", err));
 </script>
 
 </body>
 </html>
+
 
