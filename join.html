@@ -5,96 +5,205 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Ur Gay Now | Join & Staff</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* General Page Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #2e2e2e;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #222;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+nav h1 { color: #ff66b2; }
+nav ul { list-style: none; display: flex; gap: 25px; margin: 0; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: 600; transition: 0.3s; }
+nav ul li a:hover { color: #00d0e0; }
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h1 { font-size: 2.8rem; color: #ff66b2; margin-bottom: 15px; }
+.hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #ccc; line-height: 1.6; }
+
+/* Accordion */
+.accordion {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #3b3b3b;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.accordion-item {
+  border-bottom: 1px solid #555;
+}
+.accordion-header {
+  padding: 18px 25px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #ff66b2;
+  background: #2e2e2e;
+  transition: 0.3s;
+}
+.accordion-header:hover { background: #444; color: #00d0e0; }
+.accordion-content {
+  padding: 15px 25px;
+  display: none;
+  color: #ccc;
+  background: #3b3b3b;
+}
+.accordion-content ul { list-style: disc; margin-left: 20px; }
+
+/* Buttons Section */
+.buttons {
+  text-align: center;
+  padding: 40px 20px;
+  background: #3b3b3b;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.buttons a {
+  display: inline-block;
+  padding: 15px 35px;
+  border-radius: 12px;
+  background: #ff66b2;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.buttons a:hover {
+  background: #00d0e0;
+  transform: scale(1.05);
+  color: #000;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #222;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1.1rem; }
+  .buttons { flex-direction: column; }
+}
+</style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav>
-    <h1>Ur Gay Now</h1>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="tos.html">Terms of Service</a></li>
-        <li><a href="join.html">Join & Staff</a></li>
-    </ul>
+  <h1>Ur Gay Now</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="join.html">Join & Staff</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="tos.html">Terms of Service</a></li>
+  </ul>
 </nav>
 
+<!-- Hero Section -->
 <section class="hero">
-    <h1>Join & Meet Our Staff 🌟</h1>
-    <p>Welcome! Here you can join Ur Gay Now, check out our Discord server and VRChat group, and meet all our amazing staff members!</p>
+  <h1>Join & Meet Our Staff 🌟</h1>
+  <p>Welcome! Here you can join Ur Gay Now, check out our Discord server and VRChat group, and meet all our amazing staff members!</p>
 </section>
 
+<!-- Accordion -->
 <section class="accordion">
-    <div class="accordion-item">
-        <div class="accordion-header">🌐 Discord Server</div>
-        <div class="accordion-content">
-            <p>Join us on Discord to be part of the Ur Gay Now community: <a href="https://discord.gg/aDuM9ePXAt" target="_blank" style="color:#00d0e0;">discord.gg/aDuM9ePXAt</a></p>
-        </div>
+  <div class="accordion-item">
+    <div class="accordion-header">🌐 Discord Server</div>
+    <div class="accordion-content">
+      <p>Join us on Discord: <a href="https://discord.gg/aDuM9ePXAt" target="_blank" style="color:#00d0e0;">discord.gg/aDuM9ePXAt</a></p>
     </div>
-    <div class="accordion-item">
-        <div class="accordion-header">🕹️ VRChat Group</div>
-        <div class="accordion-content">
-            <p>Check out our VRChat group for events and fun: <a href="https://vrchat.com/home/group/grp_57e21db6-b1b6-44a0-bc1e-d1f744ab6132" target="_blank" style="color:#00d0e0;">VRChat Group</a></p>
-        </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">🕹️ VRChat Group</div>
+    <div class="accordion-content">
+      <p>Check out our VRChat group: <a href="https://vrchat.com/home/group/grp_57e21db6-b1b6-44a0-bc1e-d1f744ab6132" target="_blank" style="color:#00d0e0;">VRChat Group</a></p>
     </div>
-    <div class="accordion-item">
-        <div class="accordion-header">🏆 Admin & Founder</div>
-        <div class="accordion-content">
-            <ul>
-                <li>Founder: I~_O R E O_~I, Ace The Puppo</li>
-                <li>Co-Founder: ༒Pups Afton ༒</li>
-                <li>Co-Owner: ༒豆Tofuu腐༒</li>
-            </ul>
-        </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">🏆 Admin & Founder</div>
+    <div class="accordion-content">
+      <ul>
+        <li>Founder: I~_O R E O_~I, Ace The Puppo</li>
+        <li>Co-Founder: ༒Pups Afton ༒</li>
+        <li>Co-Owner: ༒豆Tofuu腐༒</li>
+      </ul>
     </div>
-    <div class="accordion-item">
-        <div class="accordion-header">🛡️ Safeguarding</div>
-        <div class="accordion-content">
-            <ul>
-                <li>Neon-bean</li>
-                <li>Licorcegabe</li>
-            </ul>
-        </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">🛡️ Safeguarding</div>
+    <div class="accordion-content">
+      <ul>
+        <li>Neon-bean</li>
+        <li>Licorcegabe</li>
+      </ul>
     </div>
-    <div class="accordion-item">
-        <div class="accordion-header">💻 Admin</div>
-        <div class="accordion-content">
-            <ul>
-                <li>gamezgame11</li>
-                <li>MalluTheDragon</li>
-            </ul>
-        </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">💻 Admin</div>
+    <div class="accordion-content">
+      <ul>
+        <li>gamezgame11</li>
+        <li>MalluTheDragon</li>
+      </ul>
     </div>
-    <div class="accordion-item">
-        <div class="accordion-header">👥 Staff</div>
-        <div class="accordion-content">
-            <ul>
-                <li>Just_A_Door</li>
-                <li>Dalek-D2</li>
-                <li>ApplePieYes</li>
-                <li>Floyd Da Femboy</li>
-                <li>MrBDR</li>
-                <li>river1509</li>
-                <li>HilriousBarks</li>
-                <li>༒sᴜɴɴʏ_ᴘʜᴏᴇɴɪx༒</li>
-                <li>sunnyrise․306378 e043</li>
-                <li>WingStrik101 5583</li>
-                <li>sissyboyk8</li>
-                <li>LucanXD eed4</li>
-                <li>lilly_the_nova</li>
-            </ul>
-        </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">👥 Staff</div>
+    <div class="accordion-content">
+      <ul>
+        <li>Just_A_Door</li>
+        <li>Dalek-D2</li>
+        <li>ApplePieYes</li>
+        <li>Floyd Da Femboy</li>
+        <li>MrBDR</li>
+        <li>river1509</li>
+        <li>HilriousBarks</li>
+        <li>༒sᴜɴɴʏ_ᴘʜᴏᴇɴɪx༒</li>
+        <li>sunnyrise․306378 e043</li>
+        <li>WingStrik101 5583</li>
+        <li>sissyboyk8</li>
+        <li>LucanXD eed4</li>
+        <li>lilly_the_nova</li>
+      </ul>
     </div>
+  </div>
 </section>
 
+<!-- Bottom Buttons -->
 <section class="buttons">
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="tos.html">Terms of Service</a>
+  <a href="index.html">Home</a>
+  <a href="events.html">Events</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="tos.html">Terms of Service</a>
 </section>
 
+<!-- Footer -->
 <footer>
-    <p>Ur Gay Now, a place to be u and urself 🌈</p>
-    <p>&copy; 2025 Ur Gay Now</p>
+  <p>Ur Gay Now, a place to be u and urself 🌈</p>
+  <p>&copy; 2025 Ur Gay Now</p>
 </footer>
 
 <script>
@@ -120,4 +229,5 @@ headers.forEach(header => {
 
 </body>
 </html>
+
 
