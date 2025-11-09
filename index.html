@@ -1,99 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ur Gay Now Bot | Policies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Basic Reset */
+    /* Reset */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: linear-gradient(135deg, #2b2b2b, #1a1a1a); color: #f5f5f5; }
 
-    /* Top Navigation */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
     nav {
       position: fixed;
-      top: 0; left: 0; width: 100%;
-      background: #1a1a1a;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #111111cc;
+      backdrop-filter: blur(8px);
       display: flex;
       justify-content: center;
       padding: 15px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       z-index: 100;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
     nav a {
       color: #00d0e0;
       text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
+      margin: 0 25px;
+      font-weight: 700;
+      font-size: 1.1em;
       transition: 0.3s;
     }
     nav a:hover { color: #ff66b2; }
 
-    /* Page Container */
+    /* Container */
     .container {
       max-width: 900px;
-      margin: 100px auto 50px; /* space for fixed nav */
+      margin: 120px auto 60px;
       padding: 20px;
     }
 
-    /* Headings */
+    /* Page Title */
     h1 {
       text-align: center;
-      font-size: 2.4em;
-      margin-bottom: 20px;
+      font-size: 2.8em;
+      margin-bottom: 30px;
       color: #ff66b2;
-      text-shadow: 0 0 8px rgba(255,102,178,0.6);
+      text-shadow: 0 0 10px rgba(255,102,178,0.6);
     }
 
-    /* Accordion Style */
+    /* Accordion */
     .accordion {
       background: #333333;
       color: #f5f5f5;
       cursor: pointer;
-      padding: 18px;
+      padding: 18px 25px;
       width: 100%;
       border: none;
       outline: none;
-      transition: 0.3s;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      font-size: 1.2em;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      font-size: 1.25em;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
     .accordion:hover { background: #444444; }
-    .accordion::after { content: '+ '; font-size: 1.2em; }
-    .accordion.active::after { content: "- "; }
+    .accordion::after { content: '+ '; font-size: 1.3em; transition: 0.3s; }
+    .accordion.active::after { content: '- '; }
 
     .panel {
-      padding: 0 18px;
       display: none;
-      background-color: #222222;
-      border-radius: 12px;
-      margin-bottom: 10px;
+      background: linear-gradient(135deg, #222222, #1a1a1a);
+      padding: 20px 25px;
+      border-radius: 15px;
+      margin-bottom: 20px;
       overflow: hidden;
+      animation: fadeIn 0.3s ease forwards;
     }
-    .panel p, .panel ul { padding: 10px 0; }
 
-    /* Lists */
-    ul { list-style-type: "🌸 "; padding-left: 20px; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-    /* Code & Highlight */
-    code { background: #00d0e0; color: #000; padding: 3px 6px; border-radius: 6px; font-weight: bold; }
+    h3 {
+      color: #00d0e0;
+      margin: 15px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    ul {
+      list-style-type: "🌸 ";
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    code {
+      background: #00d0e0;
+      color: #000;
+      padding: 4px 7px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
     .highlight { color: #00d0e0; font-weight: bold; }
 
     /* Footer */
     footer {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
       padding: 20px 0;
       font-size: 0.9em;
       color: #ccc;
     }
 
-    /* Smooth scroll */
-    html { scroll-behavior: smooth; }
+    /* Scroll to top button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #ff66b2;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5em;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      display: none;
+      z-index: 100;
+      transition: 0.3s;
+    }
+    #scrollTopBtn:hover { background: #00d0e0; }
+
+    a { color: #00d0e0; text-decoration: none; transition: 0.3s; }
+    a:hover { color: #ff66b2; text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .accordion { font-size: 1.1em; padding: 15px 18px; }
+      h1 { font-size: 2.2em; }
+    }
   </style>
 </head>
 <body>
@@ -105,10 +164,11 @@
   </nav>
 
   <div class="container">
+
     <h1>🌈 Ur Gay Now Bot Policies</h1>
 
     <!-- Privacy Policy -->
-    <button class="accordion" id="privacy">Privacy Policy</button>
+    <button class="accordion" id="privacy">Privacy Policy 🌐</button>
     <div class="panel">
       <p><strong>Last Updated:</strong> November 9th, 2025</p>
 
@@ -116,53 +176,53 @@
       <ul>
         <li>Discord User IDs</li>
         <li>Discord Server ID</li>
-        <li>Role Names (for permissions & moderation)</li>
+        <li>Role Names for permissions & moderation</li>
       </ul>
 
       <h3>🔐 How We Use Your Data</h3>
-      <p>Your data is only used to ensure proper operation of the <strong>Ur Gay Now Bot</strong> within the official <span class="highlight">Ur Gay Now</span> Discord server.</p>
+      <p>Used only to ensure proper operation of the <strong>Ur Gay Now Bot</strong> in the official server.</p>
 
       <h3>🚫 Server Access Restriction</h3>
-      <p>The bot is exclusive to the <span class="highlight">Ur Gay Now</span> server and is not permitted elsewhere.</p>
+      <p>Bot is exclusive to the <span class="highlight">Ur Gay Now</span> server and cannot be used elsewhere.</p>
 
       <h3>❌ What We Don't Do</h3>
       <ul>
-        <li>Store unnecessary personal data</li>
-        <li>Share data with third parties</li>
-        <li>Sell or market your information</li>
+        <li>No unnecessary personal data collection</li>
+        <li>No sharing with third parties</li>
+        <li>No selling or marketing your info</li>
       </ul>
 
       <h3>🛠 Data Retention</h3>
-      <p>Data is retained only while the bot operates within the authorized server. Removal clears all data.</p>
+      <p>Data is stored only while the bot operates. Removal clears all associated data.</p>
 
       <h3>🔒 Your Rights</h3>
-      <p>Contact server staff to request deletion of data (may affect bot functionality).</p>
+      <p>Request data deletion through server staff (may affect bot features).</p>
     </div>
 
     <!-- Terms of Service -->
-    <button class="accordion" id="tos">Terms of Service</button>
+    <button class="accordion" id="tos">Terms of Service 📜</button>
     <div class="panel">
       <p><strong>Last Updated:</strong> November 9th, 2025</p>
 
       <h3>💁 Overview</h3>
-      <p><strong>Ur Gay Now Bot</strong> is private and exclusive to the <span class="highlight">Ur Gay Now</span> Discord server, providing moderation and fun utilities for community members.</p>
+      <p><strong>Ur Gay Now Bot</strong> is private and exclusive to the <span class="highlight">Ur Gay Now</span> Discord server. Provides moderation, staff utilities, and fun commands.</p>
 
       <h3>👥 Authorized Use</h3>
       <ul>
-        <li>Bot is strictly exclusive to <span class="highlight">Ur Gay Now</span></li>
+        <li>Strictly exclusive to <span class="highlight">Ur Gay Now</span></li>
         <li>Use outside the server is prohibited</li>
-        <li>Must follow <a href="https://discord.com/terms" target="_blank">Discord ToS</a> and <a href="https://discord.com/guidelines" target="_blank">Guidelines</a></li>
+        <li>Must follow <a href="https://discord.com/terms" target="_blank">Discord ToS</a> & <a href="https://discord.com/guidelines" target="_blank">Guidelines</a></li>
       </ul>
 
       <h3>❌ Prohibited Actions</h3>
       <ul>
-        <li>No abusing or spamming the bot</li>
+        <li>No abuse, spam, or exploitation</li>
         <li>No reverse engineering or modification</li>
-        <li>No harassment or rule-breaking behavior</li>
+        <li>No harassment or rule-breaking</li>
       </ul>
 
       <h3>🔐 Data & Privacy</h3>
-      <p>Minimal data (User IDs, Role Names, Server IDs) is collected. See the <a href="#privacy">Privacy Policy</a> for details.</p>
+      <p>Minimal data is collected (User IDs, Role Names, Server IDs). See the Privacy Policy above.</p>
 
       <h3>🛠 Downtime & Liability</h3>
       <p>Bot is provided “as is.” Not responsible for downtime or data loss.</p>
@@ -172,6 +232,9 @@
     </div>
 
   </div>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn">↑</button>
 
   <footer>
     <p>Thank you for being part of <strong>Ur Gay Now</strong> 💖</p>
@@ -188,6 +251,14 @@
         panel.style.display = panel.style.display === "block" ? "none" : "block";
       });
     });
+
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = () => {
+      scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    scrollTopBtn.addEventListener("click", () => window.scrollTo({top: 0, behavior: 'smooth'}));
   </script>
+
 </body>
 </html>
