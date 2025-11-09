@@ -6,19 +6,35 @@
 <title>Ur Gay Now | Privacy Policy</title>
 <link rel="stylesheet" href="style.css">
 <style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #2e2e2e;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #222;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+nav h1 { color: #ff66b2; }
+nav ul { list-style: none; display: flex; gap: 25px; margin: 0; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: 600; transition: 0.3s; }
+nav ul li a:hover { color: #00d0e0; }
+
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 120px 20px 80px;
-  background: linear-gradient(135deg, #ff66b2, #00d0e0);
-  color: #fff;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  padding: 100px 20px;
 }
-.hero h1 { font-size: 3rem; margin-bottom: 20px; }
-.hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
-.hero .btn { display: inline-block; padding: 18px 40px; border-radius: 12px; background: #ff66b2; color: #fff; font-weight: 600; margin: 10px 10px; text-decoration: none; transition: 0.3s; }
-.hero .btn:hover { background: #00d0e0; transform: scale(1.05); }
+.hero h1 { font-size: 2.8rem; color: #ff66b2; margin-bottom: 20px; }
+.hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #ccc; line-height: 1.6; }
 
 /* Accordion */
 .accordion { max-width: 900px; margin: 40px auto; border-radius: 12px; overflow: hidden; }
@@ -27,11 +43,43 @@
 .accordion-header:hover { background: #ff66b2; }
 .accordion-content { display: none; padding: 15px 20px; background: #111; color: #ccc; }
 
+/* Buttons Section */
+.buttons {
+  text-align: center;
+  padding: 60px 20px;
+  background: #3b3b3b;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.buttons a {
+  display: inline-block;
+  padding: 18px 40px;
+  border-radius: 12px;
+  background: #ff66b2;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.buttons a:hover { background: #00d0e0; transform: scale(1.05); }
+
 /* Footer */
-footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; font-size: 0.9rem; }
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  background: #222;
+  color: #aaa;
+  font-size: 0.9rem;
+}
 
 /* Responsive */
-@media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .hero p { font-size: 1.1rem; } }
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1.1rem; }
+  .buttons { flex-direction: column; }
+}
 </style>
 </head>
 <body>
@@ -50,20 +98,18 @@ footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; 
 <!-- Hero Section -->
 <section class="hero">
   <h1>Privacy Policy 🔒</h1>
-  <p>We value your privacy and want to make sure your data is safe while using Ur Gay Now Bot.</p>
+  <p>Welcome! This page explains how the Ur Gay Now Bot collects and uses minimal data to ensure smooth functionality. Your privacy is our priority!</p>
 </section>
 
 <!-- Accordion Sections -->
 <section class="accordion">
-
   <div class="accordion-item">
-    <div class="accordion-header">💁 What Data We Collect</div>
+    <div class="accordion-header">💁 Data We Collect</div>
     <div class="accordion-content">
-      <p>We collect only basic data to make the bot function correctly in the Ur Gay Now server:</p>
       <ul>
         <li>Discord User IDs</li>
         <li>Discord Server IDs</li>
-        <li>Role Names in the server</li>
+        <li>Role Names in the Server</li>
       </ul>
     </div>
   </div>
@@ -71,10 +117,9 @@ footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; 
   <div class="accordion-item">
     <div class="accordion-header">🔐 How We Use Your Data</div>
     <div class="accordion-content">
-      <p>Your data is used solely for the bot's functionality:</p>
       <ul>
-        <li>To provide moderation and staff commands</li>
-        <li>To ensure the bot works properly in your server</li>
+        <li>Provide commands such as moderation and staff utilities</li>
+        <li>Ensure the bot functions correctly in your server</li>
       </ul>
     </div>
   </div>
@@ -83,9 +128,9 @@ footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; 
     <div class="accordion-header">❌ What We Don't Do</div>
     <div class="accordion-content">
       <ul>
-        <li>We do not share your data with third parties</li>
-        <li>We do not sell your information</li>
-        <li>We do not use your data for marketing</li>
+        <li>We do not share or sell your data</li>
+        <li>We do not use your information for marketing</li>
+        <li>We only store data necessary for bot functionality</li>
       </ul>
     </div>
   </div>
@@ -93,17 +138,23 @@ footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; 
   <div class="accordion-item">
     <div class="accordion-header">🛠 Data Retention</div>
     <div class="accordion-content">
-      <p>We keep your data only as long as the bot is active in the server. Once removed, data associated with your server is deleted.</p>
+      <p>Data is retained only while the bot is active in your server. Once removed, all related data is deleted.</p>
     </div>
   </div>
 
   <div class="accordion-item">
-    <div class="accordion-header">🔒 Your Rights</div>
+    <div class="accordion-header">📬 Contact</div>
     <div class="accordion-content">
-      <p>You can request removal of any server-related data at any time. Doing so may affect bot functionality.</p>
+      <p>If you have concerns, contact the server staff via Discord for assistance.</p>
     </div>
   </div>
+</section>
 
+<!-- Buttons Section -->
+<section class="buttons">
+  <a href="index.html">Home</a>
+  <a href="tos.html">Terms of Service</a>
+  <a href="join.html">Join & Staff</a>
 </section>
 
 <!-- Footer -->
@@ -113,7 +164,7 @@ footer { text-align: center; padding: 50px 20px; background: #222; color: #aaa; 
 </footer>
 
 <script>
-// Accordion toggle script
+// Accordion toggle
 const headers = document.querySelectorAll('.accordion-header');
 headers.forEach(header => {
   header.addEventListener('click', () => {
