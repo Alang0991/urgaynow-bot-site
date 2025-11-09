@@ -31,7 +31,7 @@ nav ul li a:hover { color: #00d0e0; }
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 80px 20px;
 }
 .hero h1 { font-size: 2.8rem; color: #ff66b2; margin-bottom: 20px; }
 .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #ccc; line-height: 1.6; }
@@ -39,14 +39,15 @@ nav ul li a:hover { color: #00d0e0; }
 /* Accordion */
 .accordion { max-width: 900px; margin: 40px auto; border-radius: 12px; overflow: hidden; }
 .accordion-item { margin-bottom: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-.accordion-header { background: #222; padding: 15px 20px; cursor: pointer; font-weight: 600; transition: 0.3s; color: #fff; }
-.accordion-header:hover { background: #ff66b2; }
-.accordion-content { display: none; padding: 15px 20px; background: #111; color: #ccc; }
+.accordion-header { background: #222; padding: 18px 25px; cursor: pointer; font-weight: 600; color: #ff66b2; transition: 0.3s; }
+.accordion-header:hover { color: #00d0e0; background: #333; }
+.accordion-content { display: none; padding: 15px 25px; background: #3b3b3b; color: #ccc; }
+.accordion-content ul { list-style: disc; margin-left: 20px; }
 
 /* Buttons Section */
 .buttons {
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
   background: #3b3b3b;
   display: flex;
   justify-content: center;
@@ -55,7 +56,7 @@ nav ul li a:hover { color: #00d0e0; }
 }
 .buttons a {
   display: inline-block;
-  padding: 18px 40px;
+  padding: 15px 35px;
   border-radius: 12px;
   background: #ff66b2;
   color: #fff;
@@ -63,12 +64,12 @@ nav ul li a:hover { color: #00d0e0; }
   text-decoration: none;
   transition: 0.3s;
 }
-.buttons a:hover { background: #00d0e0; transform: scale(1.05); }
+.buttons a:hover { background: #00d0e0; transform: scale(1.05); color: #000; }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 50px 20px;
+  padding: 40px 20px;
   background: #222;
   color: #aaa;
   font-size: 0.9rem;
@@ -89,9 +90,10 @@ footer {
   <h1>Ur Gay Now</h1>
   <ul>
     <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="join.html">Join & Staff</a></li>
     <li><a href="privacy.html">Privacy Policy</a></li>
     <li><a href="tos.html">Terms of Service</a></li>
-    <li><a href="join.html">Join</a></li>
   </ul>
 </nav>
 
@@ -150,11 +152,12 @@ footer {
   </div>
 </section>
 
-<!-- Buttons Section -->
+<!-- Bottom Buttons -->
 <section class="buttons">
   <a href="index.html">Home</a>
-  <a href="tos.html">Terms of Service</a>
+  <a href="events.html">Events</a>
   <a href="join.html">Join & Staff</a>
+  <a href="tos.html">Terms of Service</a>
 </section>
 
 <!-- Footer -->
@@ -164,7 +167,6 @@ footer {
 </footer>
 
 <script>
-// Accordion toggle
 const headers = document.querySelectorAll('.accordion-header');
 headers.forEach(header => {
   header.addEventListener('click', () => {
@@ -187,5 +189,3 @@ headers.forEach(header => {
 
 </body>
 </html>
-
-
