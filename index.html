@@ -63,6 +63,47 @@ nav ul li a:hover { color: #00d0e0; }
   color: #000;
 }
 
+/* Quote Section */
+.quote-fade {
+  background: #222;
+  color: #ffb6d5;
+  padding: 60px 20px;
+  border-top: 2px solid #ff66b2;
+  border-bottom: 2px solid #00d0e0;
+  text-align: center;
+  font-size: 1.1rem;
+  overflow: hidden;
+}
+
+.quote-box {
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+  transition: opacity 1s ease-in-out;
+}
+
+.quote-box p {
+  margin: 0;
+  color: #ffb6d5;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.quote-box ul {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  color: #ccc;
+  text-align: left;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.quote-box ul li::before {
+  content: "• ";
+  color: #00d0e0;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -114,13 +155,57 @@ footer {
   <a href="tos.html">Terms of Service</a>
 </section>
 
+<!-- Animated Community Quotes -->
+<section class="quote-fade">
+  <div class="quote-box" id="quote-box">
+    <p>"Ur gay now" – every person who's ever been invited to UGN 💖 – Floyd</p>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer>
   <p>Ur Gay Now, a place to be you and yourself 🌈</p>
   <p>&copy; 2025 Ur Gay Now</p>
 </footer>
 
+<script>
+const quotes = [
+  `
+  <p>"Ur gay now" – every person who's ever been invited to UGN 💖 – Floyd</p>
+  `,
+  `
+  <p><strong>Alpha</strong> – What I like about Ur Gay Now:</p>
+  <ul>
+    <li>Friendly</li>
+    <li>Fun</li>
+    <li>Chill</li>
+    <li>Furryed</li>
+    <li>Chill Staff</li>
+    <li>Active games</li>
+    <li>Am Gay (Idk why I added that)</li>
+  </ul>
+  `,
+  `
+  <p><strong>Oreo</strong> – Kind, loving, and a place where I can be gay and fruity lol 🏳️‍🌈</p>
+  `,
+  `
+  <p><strong>Sunny</strong> – It’s chaotic and I like chaotic… and my father owns the group 😎</p>
+  `
+];
+
+let index = 0;
+const quoteBox = document.getElementById('quote-box');
+
+setInterval(() => {
+  quoteBox.style.opacity = 0;
+  setTimeout(() => {
+    quoteBox.innerHTML = quotes[index];
+    quoteBox.style.opacity = 1;
+    index = (index + 1) % quotes.length;
+  }, 600);
+}, 6000);
+</script>
+
 </body>
 </html>
-
 
