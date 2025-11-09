@@ -3,120 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ur Gay Now Bot | Terms of Service</title>
+  <title>Ur Gay Now Bot | Policies</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #2b2b2b;
-      color: #f5f5f5;
-      padding: 40px;
-      max-width: 850px;
-      margin: 40px auto;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-      line-height: 1.6;
+    /* Basic Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: linear-gradient(135deg, #2b2b2b, #1a1a1a); color: #f5f5f5; }
+
+    /* Top Navigation */
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    nav a {
+      color: #00d0e0;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #ff66b2; }
+
+    /* Page Container */
+    .container {
+      max-width: 900px;
+      margin: 100px auto 50px; /* space for fixed nav */
+      padding: 20px;
     }
 
-    h1, h2 {
-      color: #ff66b2;
-      text-shadow: 0 0 6px rgba(255,102,178,0.6);
-    }
-
+    /* Headings */
     h1 {
       text-align: center;
-      font-size: 2.2em;
+      font-size: 2.4em;
+      margin-bottom: 20px;
+      color: #ff66b2;
+      text-shadow: 0 0 8px rgba(255,102,178,0.6);
+    }
+
+    /* Accordion Style */
+    .accordion {
+      background: #333333;
+      color: #f5f5f5;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      outline: none;
+      transition: 0.3s;
+      border-radius: 12px;
       margin-bottom: 10px;
+      font-size: 1.2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+    .accordion:hover { background: #444444; }
+    .accordion::after { content: '+ '; font-size: 1.2em; }
+    .accordion.active::after { content: "- "; }
 
-    h2 {
-      border-left: 4px solid #00d0e0;
-      padding-left: 10px;
-      margin-top: 30px;
-      font-size: 1.4em;
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: #222222;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      overflow: hidden;
     }
+    .panel p, .panel ul { padding: 10px 0; }
 
-    ul {
-      list-style-type: "🌸 ";
-      padding-left: 25px;
-    }
+    /* Lists */
+    ul { list-style-type: "🌸 "; padding-left: 20px; }
 
-    code {
-      background: #00d0e0;
-      color: #000;
-      padding: 3px 6px;
-      border-radius: 6px;
-      font-weight: bold;
-    }
+    /* Code & Highlight */
+    code { background: #00d0e0; color: #000; padding: 3px 6px; border-radius: 6px; font-weight: bold; }
+    .highlight { color: #00d0e0; font-weight: bold; }
 
-    strong {
-      color: #ffaad6;
-    }
-
-    p {
-      margin-top: 8px;
-    }
-
+    /* Footer */
     footer {
       text-align: center;
       margin-top: 40px;
+      padding: 20px 0;
       font-size: 0.9em;
       color: #ccc;
     }
 
-    a {
-      color: #00d0e0;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .highlight {
-      color: #00d0e0;
-      font-weight: bold;
-    }
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
-  <h1>🌈 Ur Gay Now Bot — Terms of Service</h1>
-  <p><strong>Last Updated:</strong> November 9th, 2025</p>
 
-  <h2>💁 Overview</h2>
-  <p><strong>Ur Gay Now Bot</strong> is a private, custom-built Discord bot made exclusively for the <span class="highlight">Ur Gay Now</span> community. It provides moderation, staff utilities, and fun commands designed to create a safe and inclusive space for members.</p>
+  <!-- Navigation -->
+  <nav>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#tos">Terms of Service</a>
+  </nav>
 
-  <h2>👥 Authorized Use</h2>
-  <ul>
-    <li>This bot is <strong>strictly exclusive</strong> to the <span class="highlight">Ur Gay Now</span> Discord server.</li>
-    <li>Use of this bot outside of the authorized server is <strong>not permitted</strong>.</li>
-    <li>Any attempts to invite or replicate the bot elsewhere will result in immediate denial of access or blacklisting.</li>
-    <li>All users must comply with <a href="https://discord.com/terms" target="_blank">Discord’s Terms of Service</a> and <a href="https://discord.com/guidelines" target="_blank">Community Guidelines</a>.</li>
-  </ul>
+  <div class="container">
+    <h1>🌈 Ur Gay Now Bot Policies</h1>
 
-  <h2>❌ Prohibited Actions</h2>
-  <ul>
-    <li>No abusing, spamming, or exploiting the bot.</li>
-    <li>No reverse engineering, decompiling, or modifying the bot’s code.</li>
-    <li>No use of the bot for harassment, hate speech, or other rule-breaking behavior.</li>
-  </ul>
+    <!-- Privacy Policy -->
+    <button class="accordion" id="privacy">Privacy Policy</button>
+    <div class="panel">
+      <p><strong>Last Updated:</strong> November 9th, 2025</p>
 
-  <h2>🔐 Data & Privacy</h2>
-  <p>We collect minimal information (such as User IDs, Role Names, and Server IDs) required to provide functionality. Data is never shared, sold, or stored beyond what’s necessary for operation.</p>
-  <p>For more details, please refer to our <a href="privacy.html">Privacy Policy</a>.</p>
+      <h3>💁 What Data We Collect</h3>
+      <ul>
+        <li>Discord User IDs</li>
+        <li>Discord Server ID</li>
+        <li>Role Names (for permissions & moderation)</li>
+      </ul>
 
-  <h2>🛠 Downtime & Liability</h2>
-  <p>We aim for consistent uptime and functionality, but the bot is provided <em>“as is”</em>. We are not responsible for technical issues, data loss, or interruptions in service.</p>
+      <h3>🔐 How We Use Your Data</h3>
+      <p>Your data is only used to ensure proper operation of the <strong>Ur Gay Now Bot</strong> within the official <span class="highlight">Ur Gay Now</span> Discord server.</p>
 
-  <h2>📬 Contact</h2>
-  <p>For help, issues, or questions, please contact via Discord:</p>
-  <p><code>@puppy_acey</code> or <code>@puppo_boy</code></p>
+      <h3>🚫 Server Access Restriction</h3>
+      <p>The bot is exclusive to the <span class="highlight">Ur Gay Now</span> server and is not permitted elsewhere.</p>
 
-  <h2>📄 Policy Updates</h2>
-  <p>We may update these Terms of Service periodically. Any major changes will be announced in the <span class="highlight">Ur Gay Now</span> Discord server.</p>
+      <h3>❌ What We Don't Do</h3>
+      <ul>
+        <li>Store unnecessary personal data</li>
+        <li>Share data with third parties</li>
+        <li>Sell or market your information</li>
+      </ul>
+
+      <h3>🛠 Data Retention</h3>
+      <p>Data is retained only while the bot operates within the authorized server. Removal clears all data.</p>
+
+      <h3>🔒 Your Rights</h3>
+      <p>Contact server staff to request deletion of data (may affect bot functionality).</p>
+    </div>
+
+    <!-- Terms of Service -->
+    <button class="accordion" id="tos">Terms of Service</button>
+    <div class="panel">
+      <p><strong>Last Updated:</strong> November 9th, 2025</p>
+
+      <h3>💁 Overview</h3>
+      <p><strong>Ur Gay Now Bot</strong> is private and exclusive to the <span class="highlight">Ur Gay Now</span> Discord server, providing moderation and fun utilities for community members.</p>
+
+      <h3>👥 Authorized Use</h3>
+      <ul>
+        <li>Bot is strictly exclusive to <span class="highlight">Ur Gay Now</span></li>
+        <li>Use outside the server is prohibited</li>
+        <li>Must follow <a href="https://discord.com/terms" target="_blank">Discord ToS</a> and <a href="https://discord.com/guidelines" target="_blank">Guidelines</a></li>
+      </ul>
+
+      <h3>❌ Prohibited Actions</h3>
+      <ul>
+        <li>No abusing or spamming the bot</li>
+        <li>No reverse engineering or modification</li>
+        <li>No harassment or rule-breaking behavior</li>
+      </ul>
+
+      <h3>🔐 Data & Privacy</h3>
+      <p>Minimal data (User IDs, Role Names, Server IDs) is collected. See the <a href="#privacy">Privacy Policy</a> for details.</p>
+
+      <h3>🛠 Downtime & Liability</h3>
+      <p>Bot is provided “as is.” Not responsible for downtime or data loss.</p>
+
+      <h3>📬 Contact</h3>
+      <p>For questions, contact server staff.</p>
+    </div>
+
+  </div>
 
   <footer>
     <p>Thank you for being part of <strong>Ur Gay Now</strong> 💖</p>
     <p>© 2025 Ur Gay Now | All Rights Reserved</p>
   </footer>
+
+  <script>
+    // Accordion functionality
+    const accordions = document.querySelectorAll(".accordion");
+    accordions.forEach(acc => {
+      acc.addEventListener("click", () => {
+        acc.classList.toggle("active");
+        const panel = acc.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
 </body>
 </html>
