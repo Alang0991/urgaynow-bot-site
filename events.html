@@ -1,128 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ur Gay Now | Events</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #333;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ur Gay Now | Events</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* 🌈 General Page Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #2e2e2e 0%, #1a1a1a 100%);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
-    nav {
-      background: #222;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* 🌟 Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(30,30,30,0.9);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+}
+nav h1 {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #ff66b2, #00d0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: #00d0e0;
+  text-shadow: 0 0 8px #00d0e0;
+}
 
-    nav h1 { color: #ff66b2; margin: 0; }
-    nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-    nav ul li a { color: #fff; text-decoration: none; }
-    nav ul li a:hover { color: #ff66b2; }
+/* 💖 Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  color: #ff66b2;
+  text-shadow: 0 0 15px rgba(255,102,178,0.6);
+  margin-bottom: 20px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ccc;
+  line-height: 1.6;
+}
 
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: #444;
-    }
+/* 🌟 Events Section */
+.events {
+  padding: 40px 20px;
+  text-align: center;
+}
+.events h2 {
+  color: #ff66b2;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-shadow: 0 0 10px #ff66b2;
+}
+#event-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.event-item {
+  background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0,208,224,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
+}
+.event-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255,102,178,0.6);
+}
+.event-item h3 {
+  color: #ff66b2;
+  margin-bottom: 10px;
+  text-shadow: 0 0 6px #ff66b2;
+}
+.event-item p {
+  margin: 6px 0;
+  color: #ccc;
+}
+.join-btn {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff66b2, #00d0e0);
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 10px rgba(255,102,178,0.5);
+}
+.join-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00d0e0;
+}
 
-    .hero h1 { color: #ff66b2; margin-bottom: 10px; font-size: 2.5rem; }
-    .hero p { color: #ddd; font-size: 1.1rem; }
+/* 🌸 Buttons Section */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 20px;
+  flex-wrap: wrap;
+}
+.buttons a {
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #ff66b2, #00d0e0);
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 15px rgba(255,102,178,0.5);
+}
+.buttons a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00d0e0;
+}
 
-    .events {
-      padding: 40px 20px;
-      background: #444;
-      text-align: center;
-    }
+/* 🌈 Footer */
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  background: #1a1a1a;
+  color: #aaa;
+  font-size: 0.9rem;
+  border-top: 2px solid #ff66b2;
+  box-shadow: 0 -2px 15px rgba(255,102,178,0.3);
+}
 
-    .events h2 {
-      color: #ff66b2;
-      margin-bottom: 30px;
-      font-size: 2rem;
-    }
+/* 🌟 Animations */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #ff66b2, 0 0 10px #00d0e0; }
+  100% { text-shadow: 0 0 20px #ff66b2, 0 0 30px #00d0e0; }
+}
 
-    #event-list {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .event-item {
-      background: #555;
-      padding: 20px;
-      border-radius: 12px;
-      width: 100%;
-      max-width: 500px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: transform 0.2s;
-      text-align: left;
-    }
-
-    .event-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .event-item h3 {
-      color: #ff66b2;
-      margin-bottom: 10px;
-    }
-
-    .event-item p {
-      margin: 6px 0;
-    }
-
-    .join-btn {
-      display: inline-block;
-      margin-top: 10px;
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      background: #555;
-      color: #fff;
-      transition: background 0.2s;
-    }
-
-    .join-btn:hover {
-      background: #ff66b2;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
-      background: #222;
-    }
-
-    .buttons a {
-      text-decoration: none;
-      color: #fff;
-      background: #555;
-      padding: 10px 20px;
-      border-radius: 8px;
-      transition: background 0.2s;
-    }
-
-    .buttons a:hover { background: #ff66b2; }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #222;
-      color: #ddd;
-    }
-  </style>
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1.1rem; }
+  #event-list { gap: 15px; }
+  .buttons { flex-direction: column; }
+  .buttons a { width: 100%; text-align: center; }
+}
+</style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav>
   <h1>Ur Gay Now</h1>
   <ul>
@@ -134,16 +190,19 @@
   </ul>
 </nav>
 
+<!-- Hero Section -->
 <section class="hero">
   <h1>Upcoming Events 🎉</h1>
   <p>Check out our upcoming events! Updated automatically from our Google Sheet.</p>
 </section>
 
+<!-- Events Section -->
 <section class="events" id="events">
   <h2>Upcoming Events 🎉</h2>
   <div id="event-list"></div>
 </section>
 
+<!-- Buttons -->
 <section class="buttons">
   <a href="index.html">Home</a>
   <a href="join.html">Join & Staff</a>
@@ -151,12 +210,14 @@
   <a href="tos.html">Terms of Service</a>
 </section>
 
+<!-- Footer -->
 <footer>
   <p>Ur Gay Now, a place to be you and yourself 🌈</p>
   <p>&copy; 2025 Ur Gay Now</p>
 </footer>
 
 <script>
+// Fetch events from Google Sheet
 const sheetURL = "https://opensheet.elk.sh/1hvu8lnFeLQfE2zAQX8Nmx5m8_u__fVIoYnDPUMzWCy0/Events";
 
 fetch(sheetURL)
@@ -184,5 +245,6 @@ fetch(sheetURL)
 
 </body>
 </html>
+
 
 
