@@ -73,7 +73,7 @@ nav ul li a:hover {
 
 /* 🎀 Accordion */
 .accordion {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 40px auto;
   border-radius: 16px;
   overflow: hidden;
@@ -108,21 +108,33 @@ nav ul li a:hover {
   color: #ccc;
   transition: max-height 0.35s ease, padding 0.35s ease;
 }
-.accordion-content.show {
-  max-height: 500px;
-  padding: 15px 25px;
-}
-.accordion-content ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+/* 🌸 Staff Grid & Cards */
+.staff-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
 }
-.accordion-content ul li::before {
-  content: "🌸 ";
-  color: #ff66b2;
+.staff-card {
+  background: linear-gradient(145deg, #ff66b2, #00d0e0);
+  color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.staff-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 208, 224, 0.6);
+}
+.staff-card .staff-role {
+  font-size: 0.85rem;
+  color: #fff;
+  opacity: 0.9;
+  margin-top: 4px;
 }
 
 /* 🌸 Buttons Section */
@@ -192,66 +204,80 @@ footer {
 
 <!-- Accordion -->
 <section class="accordion">
+
+  <!-- Discord -->
   <div class="accordion-item">
     <div class="accordion-header">🌐 Discord Server</div>
     <div class="accordion-content">
       <p>Join us on Discord: <a href="https://discord.gg/aDuM9ePXAt" target="_blank" style="color:#00d0e0;">discord.gg/aDuM9ePXAt</a></p>
     </div>
   </div>
+
+  <!-- VRChat -->
   <div class="accordion-item">
     <div class="accordion-header">🕹️ VRChat Group</div>
     <div class="accordion-content">
       <p>Check out our VRChat group: <a href="https://vrchat.com/home/group/grp_57e21db6-b1b6-44a0-bc1e-d1f744ab6132" target="_blank" style="color:#00d0e0;">VRChat Group</a></p>
     </div>
   </div>
+
+  <!-- Founders & Co-Owners -->
   <div class="accordion-item">
     <div class="accordion-header">🏆 Founders & Co-Owners</div>
     <div class="accordion-content">
-      <ul>
-        <li>Founder: I~_O R E O_~I, Ace The Puppo</li>
-        <li>Co-Founder: ༒Pups Afton ༒</li>
-        <li>Co-Owner: ༒豆Tofuu腐༒</li>
-      </ul>
+      <div class="staff-grid">
+        <div class="staff-card"><div class="staff-name">I~_O R E O_~I</div><div class="staff-role">Founder</div></div>
+        <div class="staff-card"><div class="staff-name">Ace The Puppo</div><div class="staff-role">Founder</div></div>
+        <div class="staff-card"><div class="staff-name">༒Pups Afton ༒</div><div class="staff-role">Co-Founder</div></div>
+        <div class="staff-card"><div class="staff-name">༒豆Tofuu腐༒</div><div class="staff-role">Co-Owner</div></div>
+      </div>
     </div>
   </div>
+
+  <!-- Safeguarding -->
   <div class="accordion-item">
     <div class="accordion-header">🛡️ Safeguarding</div>
     <div class="accordion-content">
-      <ul>
-        <li>Neon-bean</li>
-        <li>Licorcegabe</li>
-      </ul>
+      <div class="staff-grid">
+        <div class="staff-card">Neon-bean</div>
+        <div class="staff-card">Licorcegabe</div>
+      </div>
     </div>
   </div>
+
+  <!-- Admin -->
   <div class="accordion-item">
     <div class="accordion-header">💻 Admin</div>
     <div class="accordion-content">
-      <ul>
-        <li>gamezgame11</li>
-        <li>MalluTheDragon</li>
-      </ul>
+      <div class="staff-grid">
+        <div class="staff-card">gamezgame11</div>
+        <div class="staff-card">MalluTheDragon</div>
+      </div>
     </div>
   </div>
+
+  <!-- Staff -->
   <div class="accordion-item">
     <div class="accordion-header">👥 Staff</div>
     <div class="accordion-content">
-      <ul>
-        <li>Just_A_Door</li>
-        <li>Dalek-D2</li>
-        <li>ApplePieYes</li>
-        <li>Floyd Da Femboy</li>
-        <li>MrBDR</li>
-        <li>river1509</li>
-        <li>HilriousBarks</li>
-        <li>༒Sunny_shrew༒</li>
-        <li>sunnyrise․306378 e043</li>
-        <li>WingStrik101 5583</li>
-        <li>sissyboyk8</li>
-        <li>LucanXD eed4</li>
-        <li>lilly_the_nova</li>
-      </ul>
+      <div class="staff-grid">
+        <div class="staff-card">Just_A_Door</div>
+        <div class="staff-card">Dalek-D2</div>
+        <div class="staff-card">ApplePieYes</div>
+        <div class="staff-card">Floyd Da Femboy</div>
+        <div class="staff-card">MrBDR</div>
+        <div class="staff-card">river1509</div>
+        <div class="staff-card">HilriousBarks</div>
+        <div class="staff-card">༒Sunny_shrew༒</div>
+        <div class="staff-card">sunnyrise․306378 e043</div>
+        <div class="staff-card">WingStrik101 5583</div>
+        <div class="staff-card">sissyboyk8</div>
+        <div class="staff-card">LucanXD eed4</div>
+        <div class="staff-card">lilly_the_nova</div>
+      </div>
     </div>
   </div>
+
 </section>
 
 <!-- Bottom Buttons -->
@@ -268,6 +294,7 @@ footer {
   <p>&copy; 2025 Ur Gay Now</p>
 </footer>
 
+<!-- Accordion Script -->
 <script>
 const headers = document.querySelectorAll('.accordion-header');
 headers.forEach(header => {
@@ -284,5 +311,3 @@ headers.forEach(header => {
 
 </body>
 </html>
-
-
