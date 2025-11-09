@@ -21,13 +21,14 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 15px 20px;
   background: rgba(30,30,30,0.9);
   box-shadow: 0 5px 20px rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
+  flex-wrap: wrap;
 }
 nav h1 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   background: linear-gradient(90deg, #ff66b2, #00d0e0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -35,8 +36,9 @@ nav h1 {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
-  margin: 0;
+  gap: 15px;
+  margin: 10px 0 0;
+  flex-wrap: wrap;
 }
 nav ul li a {
   color: #fff;
@@ -52,36 +54,36 @@ nav ul li a:hover {
 /* 💖 Hero Section */
 .hero {
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 60px 20px 40px;
 }
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #ff66b2;
   text-shadow: 0 0 15px rgba(255,102,178,0.6);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   animation: glow 2s ease-in-out infinite alternate;
 }
 .hero p {
-  font-size: 1.2rem;
-  max-width: 700px;
+  font-size: 1.1rem;
+  max-width: 650px;
   margin: 0 auto;
   color: #ccc;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* 🌸 Buttons Section */
 .buttons {
   text-align: center;
-  padding: 60px 20px;
-  background: #2e2e2e;
+  padding: 40px 15px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 .buttons a {
+  flex: 1 1 200px;
   display: inline-block;
-  padding: 18px 40px;
+  padding: 15px 20px;
   border-radius: 12px;
   background: linear-gradient(90deg, #ff66b2, #00d0e0);
   color: #fff;
@@ -100,18 +102,18 @@ nav ul li a:hover {
 .quote-fade {
   background: #2b2b2b;
   color: #ffb6d5;
-  padding: 60px 20px;
+  padding: 40px 15px;
   border-top: 2px solid #ff66b2;
   border-bottom: 2px solid #00d0e0;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   overflow: hidden;
   box-shadow: 0 0 25px rgba(0,0,0,0.4);
 }
 .quote-box {
-  max-width: 750px;
+  max-width: 700px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.5;
   transition: opacity 1s ease-in-out;
   animation: glow 2.5s ease-in-out infinite alternate;
 }
@@ -128,17 +130,17 @@ nav ul li a:hover {
   color: #ccc;
   text-align: left;
   display: inline-block;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 .quote-box ul li::before {
   content: "• ";
   color: #00d0e0;
 }
 
-/* 🌟 Clock & Date Section */
-#clock-date {
+/* 🌟 Clock & Visitor Counter */
+#clock-date, #visitor-count {
   text-align: center;
-  padding: 30px 20px;
+  padding: 20px 15px;
   font-size: 1.2rem;
   color: #00d0e0;
   font-weight: 600;
@@ -148,10 +150,10 @@ nav ul li a:hover {
 /* 🌈 Footer */
 footer {
   text-align: center;
-  padding: 50px 20px;
+  padding: 40px 15px;
   background: #1a1a1a;
   color: #aaa;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   border-top: 2px solid #ff66b2;
   box-shadow: 0 -2px 15px rgba(255,102,178,0.3);
 }
@@ -168,10 +170,10 @@ footer {
 
 /* 📱 Responsive */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2.2rem; }
-  .hero p { font-size: 1.1rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
   .buttons { flex-direction: column; }
-  #clock-date { font-size: 1rem; }
+  #clock-date, #visitor-count { font-size: 1rem; }
 }
 </style>
 </head>
@@ -193,9 +195,8 @@ footer {
 <section class="hero">
   <h1>Welcome to Ur Gay Now Mini Website 🌈</h1>
   <p>
-    Here you can see all staff, latest updates, how to join, community rules, privacy policy, and terms of service!  
-    Feel free to explore everything we have to offer. Our community is safe, fun, and welcoming to everyone!  
-    The Ur Gay Now Bot helps keep our Discord server safe while adding moderation tools and fun features like adopting dinos! 🦖
+    Explore our staff, updates, joining info, community rules, privacy policy, and terms of service!  
+    Our community is safe, fun, and welcoming. The Ur Gay Now Bot helps keep the Discord server safe with moderation and fun commands like adopting dinos! 🦖
   </p>
 </section>
 
@@ -209,19 +210,15 @@ footer {
   <a href="tos.html">Terms of Service</a>
 </section>
 
-<!-- Clock & Date -->
+<!-- Clock & Visitor Counter -->
 <div id="clock-date"></div>
+<div id="visitor-count"></div>
 
 <!-- Animated Community Quotes -->
 <section class="quote-fade">
   <div class="quote-box" id="quote-box">
     <p>"Ur gay now" – every person who's ever been invited to UGN 💖 – Floyd</p>
   </div>
-</section>
-
-<!-- Visitor Counter -->
-<section style="text-align:center; padding:20px;">
-  <p style="color:#ff66b2; font-weight:600;">Website Visitors: <span id="visitor-count">0</span></p>
 </section>
 
 <!-- Footer -->
@@ -234,17 +231,15 @@ footer {
 // 🌟 Animated Quotes
 const quotes = [
   `<p>"Ur gay now" – every person who's ever been invited to UGN 💖 – Floyd</p>`,
-  `<p><strong>Alpha</strong> – What I like about Ur Gay Now:</p><ul><li>Friendly</li><li>Fun</li><li>Chill</li><li>Furryed</li><li>Chill Staff</li><li>Active games</li><li>Am Gay (Idk why I added that)</li></ul>`,
-  `<p><strong>Oreo</strong> – Kind, loving, and a place where I can be gay and fruity lol 🏳️‍🌈</p>`,
-  `<p><strong>Sunny</strong> – It’s chaotic and I like chaotic… and my father owns the group 😎</p>`,
+  `<p><strong>Alpha</strong> – Friendly, Fun, Chill, Active Games, Gay 🌈</p>`,
+  `<p><strong>Oreo</strong> – Kind, loving, and a place to be fruity 🏳️‍🌈</p>`,
+  `<p><strong>Sunny</strong> – It’s chaotic and I like chaotic… 😎</p>`,
   `<p><strong>Wing</strong> – "I'm straight I swear." 😏</p>`,
-  `<p><strong>Foxo</strong> – UGN is a chill place meant for everyone. No matter what you are, you'll be supported 💙</p>`,
+  `<p><strong>Foxo</strong> – Chill place for everyone 💙</p>`,
   `<p><strong>Neon</strong> – Gay 🌈</p>`
 ];
-
 let index = 0;
 const quoteBox = document.getElementById('quote-box');
-
 setInterval(() => {
   quoteBox.style.opacity = 0;
   setTimeout(() => {
@@ -260,19 +255,17 @@ function updateClock() {
   const options = { weekday:'long', year:'numeric', month:'long', day:'numeric' };
   const date = now.toLocaleDateString(undefined, options);
   const time = now.toLocaleTimeString();
-  document.getElementById('clock-date').innerHTML = `${date} | ${time}`;
+  document.getElementById('clock-date').innerHTML = `📅 ${date} | ⏰ ${time}`;
 }
 setInterval(updateClock, 1000);
 updateClock();
 
-// 🌟 Visitor Counter (simple local storage for demo)
+// 🌟 Visitor Counter
 if(!localStorage.getItem('visits')) localStorage.setItem('visits','0');
 let visits = parseInt(localStorage.getItem('visits')) + 1;
 localStorage.setItem('visits', visits);
-document.getElementById('visitor-count').textContent = visits;
+document.getElementById('visitor-count').textContent = `👥 Website Visitors: ${visits}`;
 </script>
 
 </body>
 </html>
-
-
