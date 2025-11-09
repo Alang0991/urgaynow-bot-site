@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ur Gay Now | Privacy Policy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <h1>Ur Gay Now</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="tos.html">Terms of Service</a></li>
+    <li><a href="join.html">Join</a></li>
+  </ul>
+</nav>
+
+<!-- Privacy Hero -->
+<section class="hero">
+  <h2>Privacy Policy 🔒</h2>
+  <p>We respect your privacy! Here's how the Ur Gay Now Bot handles data in the server.</p>
+</section>
+
+<!-- Privacy Sections -->
+<section>
+  <div class="accordion">
+    <div class="accordion-header">What Data We Collect</div>
+    <div class="accordion-content">
+      <p>We only collect Discord User IDs, Server IDs, and Role Names necessary for bot functionality.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">How We Use Your Data</div>
+    <div class="accordion-content">
+      <p>Your data is used solely to operate the bot, including moderation, welcomes, and fun commands.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">What We Don't Do</div>
+    <div class="accordion-content">
+      <p>We do not share, sell, or use your information for marketing purposes.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">Data Retention</div>
+    <div class="accordion-content">
+      <p>We only keep data as long as the bot is active in your server. When removed, your server's data is deleted.</p>
+    </div>
+  </div>
+  <div class="accordion">
+    <div class="accordion-header">Your Rights</div>
+    <div class="accordion-content">
+      <p>You can request data removal by contacting staff. Keep in mind this may impact bot functionality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Ur Gay Now, a place to be u and urself 🌈</p>
+  <p>&copy; 2025 Ur Gay Now</p>
+</footer>
+
+<!-- Accordion Script -->
+<script>
+  const headers = document.querySelectorAll('.accordion-header');
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const isOpen = content.style.display === 'block';
+      document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+      content.style.display = isOpen ? 'none' : 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
 
