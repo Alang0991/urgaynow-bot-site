@@ -67,9 +67,25 @@ nav ul li a:hover {
 .hero p {
   font-size: 1.2rem;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   color: #ccc;
   line-height: 1.6;
+}
+.hero .join-button {
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff66b2, #00d0e0);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 0 20px rgba(255,102,178,0.6);
+  transition: 0.3s;
+}
+.hero .join-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00d0e0;
 }
 
 /* 🎀 Accordion */
@@ -112,33 +128,6 @@ nav ul li a:hover {
   padding: 15px 25px;
 }
 
-/* 🌈 Buttons Section */
-.buttons {
-  text-align: center;
-  padding: 50px 20px;
-  background: #2e2e2e;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.buttons a {
-  display: inline-block;
-  padding: 15px 35px;
-  border-radius: 12px;
-  background: linear-gradient(90deg, #ff66b2, #00d0e0);
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-  box-shadow: 0 0 15px rgba(255,102,178,0.5);
-  text-align: center;
-}
-.buttons a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #00d0e0;
-}
-
 /* 🌟 Clock & Date Section */
 #clock-date {
   text-align: center;
@@ -170,8 +159,7 @@ footer {
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.2rem; }
   .hero p { font-size: 1.1rem; }
-  .buttons { flex-direction: column; }
-  .buttons a { width: 80%; margin: 5px auto; }
+  .hero .join-button { width: 80%; font-size: 1.1rem; }
   #clock-date { font-size: 1rem; }
   .accordion-header { font-size: 1rem; padding: 15px 20px; }
   .accordion-content { padding: 10px 20px; }
@@ -180,6 +168,7 @@ footer {
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.8rem; }
   .hero p { font-size: 1rem; }
+  .hero .join-button { width: 90%; font-size: 1rem; }
   .accordion-header { font-size: 0.95rem; padding: 12px 15px; }
   .accordion-content { padding: 8px 15px; }
   nav h1 { font-size: 1.5rem; }
@@ -205,6 +194,7 @@ footer {
 <section class="hero">
   <h1>Why Join Ur Gay Now? 🌈</h1>
   <p>We Make People Gay ;3 — a fun, inclusive, and chaotic VRChat community you’ll love!</p>
+  <a href="https://discord.gg/aDuM9ePXAt" target="_blank" class="join-button">Join Now 💖</a>
 </section>
 
 <!-- Accordion / Reasons to Join -->
@@ -256,7 +246,7 @@ footer {
   <div class="accordion-item">
     <div class="accordion-header">🎁 Giveaways</div>
     <div class="accordion-content">
-      <p>We love spoiling our members with occasional giveaways, from VRChat items to fun digital surprises!</p>
+      <p>We love spoiling our members with giveaways including <strong>VRChat+, Discord Nitro, and Steam games!</strong> Everyone has a chance to win.</p>
     </div>
   </div>
 
@@ -267,13 +257,6 @@ footer {
     </div>
   </div>
 
-</section>
-
-<!-- Buttons -->
-<section class="buttons">
-  <a href="https://discord.gg/fWHsJFnpJX" target="_blank">Join Now 💖</a>
-  <a href="index.html">Home</a>
-  <a href="events.html">Events</a>
 </section>
 
 <!-- Clock & Date -->
