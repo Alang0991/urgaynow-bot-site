@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ur Gay Now | Join & Staff</title>
+<title>Ur Gay Now | Reasons to Join</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* 🌈 General Page Styles */
@@ -25,18 +25,21 @@ nav {
   background: rgba(30,30,30,0.9);
   box-shadow: 0 5px 20px rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
+  flex-wrap: wrap;
 }
 nav h1 {
   font-size: 1.8rem;
   background: linear-gradient(90deg, #ff66b2, #00d0e0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
 }
 nav ul {
   list-style: none;
   display: flex;
   gap: 25px;
   margin: 0;
+  flex-wrap: wrap;
 }
 nav ul li a {
   color: #fff;
@@ -52,7 +55,7 @@ nav ul li a:hover {
 /* 💖 Hero Section */
 .hero {
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 80px 20px 40px;
 }
 .hero h1 {
   font-size: 3rem;
@@ -89,6 +92,7 @@ nav ul li a:hover {
   color: #ff66b2;
   background: #2e2e2e;
   transition: 0.3s ease;
+  user-select: none;
 }
 .accordion-header:hover {
   background: #3d3d3d;
@@ -108,35 +112,7 @@ nav ul li a:hover {
   padding: 15px 25px;
 }
 
-/* 🌸 Staff Grid & Cards */
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
-  margin-top: 15px;
-}
-.staff-card {
-  background: linear-gradient(145deg, #ff66b2, #00d0e0);
-  color: #fff;
-  padding: 12px;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.staff-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0,208,224,0.6);
-}
-.staff-card .staff-role {
-  font-size: 0.85rem;
-  color: #fff;
-  opacity: 0.9;
-  margin-top: 4px;
-}
-
-/* 🌸 Buttons Section */
+/* 🌈 Buttons Section */
 .buttons {
   text-align: center;
   padding: 50px 20px;
@@ -156,6 +132,7 @@ nav ul li a:hover {
   text-decoration: none;
   transition: 0.3s;
   box-shadow: 0 0 15px rgba(255,102,178,0.5);
+  text-align: center;
 }
 .buttons a:hover {
   transform: scale(1.05);
@@ -194,7 +171,19 @@ footer {
   .hero h1 { font-size: 2.2rem; }
   .hero p { font-size: 1.1rem; }
   .buttons { flex-direction: column; }
+  .buttons a { width: 80%; margin: 5px auto; }
   #clock-date { font-size: 1rem; }
+  .accordion-header { font-size: 1rem; padding: 15px 20px; }
+  .accordion-content { padding: 10px 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 1rem; }
+  .accordion-header { font-size: 0.95rem; padding: 12px 15px; }
+  .accordion-content { padding: 8px 15px; }
+  nav h1 { font-size: 1.5rem; }
+  nav ul li a { font-size: 0.9rem; }
 }
 </style>
 </head>
@@ -206,7 +195,7 @@ footer {
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="events.html">Events</a></li>
-    <li><a href="join.html">Join & Staff</a></li>
+    <li><a href="join.html">Reasons to Join</a></li>
     <li><a href="privacy.html">Privacy Policy</a></li>
     <li><a href="tos.html">Terms of Service</a></li>
   </ul>
@@ -214,77 +203,67 @@ footer {
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Join & Meet Our Staff 🌟</h1>
-  <p>Welcome! Check out our Discord, VRChat group, and all amazing staff members!</p>
+  <h1>Why Join Ur Gay Now? 🌈</h1>
+  <p>We Make People Gay ;3 — a fun, inclusive, and chaotic VRChat community you’ll love!</p>
 </section>
 
-<!-- Accordion -->
+<!-- Accordion / Reasons to Join -->
 <section class="accordion">
 
   <div class="accordion-item">
-    <div class="accordion-header">🌐 Discord Server</div>
+    <div class="accordion-header">🎮 Fun & Games</div>
     <div class="accordion-content">
-      <p>Join us on Discord: <a href="https://discord.gg/aDuM9ePXAt" target="_blank" style="color:#00d0e0;">discord.gg/aDuM9ePXAt</a></p>
+      <p>We host tons of VRChat mini-games, events, hangouts, and chaotic moments every week.  
+         Whether you want silly adventures or competitive fun, there’s something for you!</p>
     </div>
   </div>
 
   <div class="accordion-item">
-    <div class="accordion-header">🕹️ VRChat Group</div>
+    <div class="accordion-header">🌈 LGBTQ+ & Furry Friendly</div>
     <div class="accordion-content">
-      <p>Check out our VRChat group: <a href="https://vrchat.com/home/group/grp_57e21db6-b1b6-44a0-bc1e-d1f744ab6132" target="_blank" style="color:#00d0e0;">VRChat Group</a></p>
+      <p>We are proudly LGBTQ+ and furry-friendly. Our space is safe, inclusive, and judgment-free — be yourself!</p>
     </div>
   </div>
 
   <div class="accordion-item">
-    <div class="accordion-header">🏆 Founders & Co-Owners</div>
+    <div class="accordion-header">🤝 Amazing Community</div>
     <div class="accordion-content">
-      <div class="staff-grid">
-        <div class="staff-card"><div class="staff-name">I~_O R E O_~I</div><div class="staff-role">Founder</div></div>
-        <div class="staff-card"><div class="staff-name">Ace The Puppo</div><div class="staff-role">Founder</div></div>
-        <div class="staff-card"><div class="staff-name">༒Pups Afton ༒</div><div class="staff-role">Co-Founder</div></div>
-        <div class="staff-card"><div class="staff-name">MalluTheDragon</div><div class="staff-role">Co-Owner</div></div>
-      </div>
+      <p>Friendly, goofy, and supportive members make it easy to meet new friends and have fun.</p>
     </div>
   </div>
 
   <div class="accordion-item">
-    <div class="accordion-header">🛡️ Safeguarding</div>
+    <div class="accordion-header">🖼️ Dynamic Banners</div>
     <div class="accordion-content">
-      <div class="staff-grid">
-        <div class="staff-card">Neon-bean</div>
-        <div class="staff-card">Licorcegabe</div>
-      </div>
+      <p>Our banners update monthly or for special events, keeping our group visually exciting and themed!</p>
     </div>
   </div>
 
   <div class="accordion-item">
-    <div class="accordion-header">💻 Admin</div>
+    <div class="accordion-header">💬 Active Discord</div>
     <div class="accordion-content">
-      <div class="staff-grid">
-        <div class="staff-card">gamezgame11</div>
-      </div>
+      <p>Stay connected with chat, memes, event updates, and community discussions in our Discord server.</p>
     </div>
   </div>
 
   <div class="accordion-item">
-    <div class="accordion-header">👥 Staff</div>
+    <div class="accordion-header">🤖 Custom Bot</div>
     <div class="accordion-content">
-      <div class="staff-grid">
-        <div class="staff-card">Just_A_Door</div>
-        <div class="staff-card">Dalek-D2</div>
-        <div class="staff-card">ApplePieYes</div>
-        <div class="staff-card">Floyd Da Femboy</div>
-        <div class="staff-card">MrBDR</div>
-        <div class="staff-card">river1509</div>
-        <div class="staff-card">HilriousBarks</div>
-        <div class="staff-card">༒Sunny_shrew༒</div>
-        <div class="staff-card">sunnyrise․306378 e043</div>
-        <div class="staff-card">WingStrik101 5583</div>
-        <div class="staff-card">sissyboyk8</div>
-        <div class="staff-card">LucanXD eed4</div>
-        <div class="staff-card">lilly_the_nova</div>
-         <div class="staff-card">༒豆Tofuu腐༒</div>
-      </div>
+      <p>Our custom bot adds fun commands, interactive games, and moderation features to make your experience smoother and sillier!</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">🎁 Giveaways</div>
+    <div class="accordion-content">
+      <p>We love spoiling our members with occasional giveaways, from VRChat items to fun digital surprises!</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">😆 Just Having Fun</div>
+    <div class="accordion-content">
+      <p>Above all, we’re here to laugh, goof around, and enjoy the community. No pressure, just vibes!</p>
     </div>
   </div>
 
@@ -292,10 +271,9 @@ footer {
 
 <!-- Buttons -->
 <section class="buttons">
+  <a href="https://discord.gg/fWHsJFnpJX" target="_blank">Join Now 💖</a>
   <a href="index.html">Home</a>
   <a href="events.html">Events</a>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="tos.html">Terms of Service</a>
 </section>
 
 <!-- Clock & Date -->
@@ -308,12 +286,12 @@ footer {
 
 <!-- Footer -->
 <footer>
-  <p>Ur Gay Now, a place to be you and yourself 🌈</p>
+  <p>Ur Gay Now — A place to be yourself 🌈</p>
   <p>&copy; 2025 Ur Gay Now</p>
 </footer>
 
 <script>
-// 🌟 Accordion Functionality
+// Accordion functionality
 const headers = document.querySelectorAll('.accordion-header');
 headers.forEach(header => {
   header.addEventListener('click', () => {
@@ -326,7 +304,7 @@ headers.forEach(header => {
   });
 });
 
-// 🌟 Clock & Date
+// Clock & Date
 function updateClock() {
   const now = new Date();
   const options = { weekday:'long', year:'numeric', month:'long', day:'numeric' };
@@ -337,16 +315,12 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// 🌟 Visitor Counter (simple localStorage demo)
+// Visitor Counter (localStorage)
 if(!localStorage.getItem('visits')) localStorage.setItem('visits','0');
 let visits = parseInt(localStorage.getItem('visits')) + 1;
 localStorage.setItem('visits', visits);
 document.getElementById('visitor-count').textContent = visits;
 </script>
-
-</body>
-</html>
-
 
 </body>
 </html>
